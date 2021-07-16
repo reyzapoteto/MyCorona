@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Corona</string>
+    <string name="desc_proning">Teknik proning dilakukan dengan berbaring tengkurap. Ini adalah posisi yang diterima secara medis untuk meningkatkan saturasi oksigen. Teknik ini bermanfaat pada pasien COVID-19 dengan atau tanpa pemakaian ventilator. Jika kadar oksigen pasien turun di bawah 94 persen, pasien bisa berbaring tengkurap. Posisi ini meningkatkan ventilasi dan memungkinkan pernapasan yang nyaman. </string>
+    <string name="howto_proning">Bagaimana cara melakukan teknik proning saat isolasi mandiri di rumah? Untuk tengkurap, pengidap membutuhkan lima bantal dan permukaan datar untuk berbarik. Satu batal di letakkan di bawah leher, satu atau dua bantal diletakkan di bawah dada hingga paha atas dan dua bantal di bawah tulang kering.
+    </string>
+    <string name="howto2_proning">Pastikan untuk mengubah posisi berbaring setiap 30 menit dari posisi tengkurang menjadi berbaring di setiap sisi dan kemudian duduk sebelum kembali ke posisi pertama (berbaring tengkurap).</string>
+    <string name="proning_suggestion">Ada beberapa hal yang harus diperhatikan saat melakukan teknik proning: \n
+Hindari tengkurap selama satu jam setelah makan.
+        \n
+Pertahankan proning hanya sebanyak yang bisa ditoleransi dengan mudah.
+        \n
+Seseorang diperbolehkan tengkurap hingga 16 jam sehari, dalam beberapa siklus, jika merasa nyaman.
+        \n
+Bantal bisa disesuaikan sedikit untuk mengubah area tekanan dan untuk kenyamanan.
+        \n
+Pantau setiap luka tekan atau cedera, terutama di sekitar tonjolan tulang.
+        \n
+</string>
+    <string name="prevention_proning">
+        Seseorang harus menghindari teknik proning jika:
+
+Sedang hamil.
+Trombosis vena dalam (diobati dalam waktu kurang dari 48 jam).
+Memiliki masalah jantung.
+Fraktur tulang belakang, tulang paha, atau panggung yang tidak stabil.
+
+    </string>
+</resources>
