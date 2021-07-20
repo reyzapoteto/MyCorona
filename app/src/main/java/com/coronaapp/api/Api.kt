@@ -1,19 +1,19 @@
 package com.coronaapp.api
 
+import com.coronaapp.model.Indonesia.IndonesiaResponse
+import com.coronaapp.model.Province.ProvinsiResponse
 import com.coronaapp.model.globalResponse
-import com.coronaapp.model.indonesiaResponse
-import com.coronaapp.model.provinsiResponse
 import retrofit2.Call
 import retrofit2.http.GET
 
 interface Api {
     @GET("/indonesia")
-    fun getIndonesia(): Call<ArrayList<indonesiaResponse>>
+    fun getIndonesia(): Call<ArrayList<IndonesiaResponse>>
 
     @GET("/")
     fun getGlobal(): Call<ArrayList<globalResponse>>
 
     @GET("/indonesia/provinsi")
-    fun getProvinsi(): Call<ArrayList<provinsiResponse>>
+    fun getProvinsi(): Call<ArrayList<ProvinsiResponse>>
 
 }

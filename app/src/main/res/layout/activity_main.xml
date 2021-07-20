@@ -798,7 +798,7 @@
                                     android:text="Penambahan"
                                     android:textAlignment="center"
                                     android:textColor="#2D4059"
-                                    android:textSize="15sp"
+                                    android:textSize="14sp"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -808,7 +808,7 @@
                                     android:layout_marginHorizontal="10dp"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"
-                                    android:text="Recovered"
+                                    android:text="Date"
                                     android:textAlignment="center"
                                     android:textColor="#2D4059"
                                     android:textSize="12sp"

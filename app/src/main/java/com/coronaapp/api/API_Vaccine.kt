@@ -1,6 +1,6 @@
 package com.coronaapp.api
 
-import com.coronaapp.model.VaccineResponse
+import com.coronaapp.model.Vaccine.VaccineResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

@@ -1,4 +1,4 @@
-package com.coronaapp.model
+package com.coronaapp.model.Vaccine
 
 import com.google.gson.annotations.SerializedName
 

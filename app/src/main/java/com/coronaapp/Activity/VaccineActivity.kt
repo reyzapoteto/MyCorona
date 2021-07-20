@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.coronaapp.R
 import com.coronaapp.api.Retrofit_Vaccine
 import com.coronaapp.databinding.ActivityVaccineBinding
-import com.coronaapp.model.VaccineResponse
+import com.coronaapp.model.Vaccine.VaccineResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

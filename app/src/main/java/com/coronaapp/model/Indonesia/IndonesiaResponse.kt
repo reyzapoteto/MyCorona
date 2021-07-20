@@ -1,6 +1,6 @@
-package com.coronaapp.model
+package com.coronaapp.model.Indonesia
 
-data class indonesiaResponse(
+data class IndonesiaResponse(
     val name: String,
     val positif: String,
     val sembuh: String,

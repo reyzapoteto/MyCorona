@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.coronaapp.R
-import com.coronaapp.model.provinsiResponse
+import com.coronaapp.model.Province.ProvinsiResponse
 
-class ProvinsiAdapter(private var list: ArrayList<provinsiResponse>) :
+class ProvinsiAdapter(private var list: ArrayList<ProvinsiResponse>) :
     RecyclerView.Adapter<ProvinsiAdapter.provinsiViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): provinsiViewHolder {
@@ -32,7 +32,7 @@ class ProvinsiAdapter(private var list: ArrayList<provinsiResponse>) :
         private val tvDeath:TextView = itemView.findViewById(R.id.tvCasesDeath)
         private val tvNameProvince:TextView = itemView.findViewById(R.id.tvProvinceName)
 
-        fun bind(provinsi: provinsiResponse) {
+        fun bind(provinsi: ProvinsiResponse) {
 
             tvPositive.text = provinsi.attributes.casePositive.toString()
             tvDeath.text = provinsi.attributes.caseDeath.toString()

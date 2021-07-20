@@ -1,4 +1,4 @@
-package com.coronaapp.model
+package com.coronaapp.model.Province
 
 import com.google.gson.annotations.SerializedName
 

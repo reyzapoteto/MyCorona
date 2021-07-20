@@ -11,14 +11,19 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoronaApp">
-        <activity android:name=".Activity.ProningActivity"
-            android:launchMode="singleTop"/>    a
-        <activity android:name=".Activity.VaccineActivity"
-            android:launchMode="singleTop"/>
-        <activity android:name=".Activity.HospitalsActivity"
-            android:launchMode="singleTop"/>
-        <activity android:name=".Activity.ProvinsiActivity"
-            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".Activity.ProningActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.VaccineActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.HospitalsActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.ProvinsiActivity"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.MainActivity"
             android:launchMode="singleTop"

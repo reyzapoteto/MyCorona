@@ -9,7 +9,7 @@ import com.coronaapp.R
 import com.coronaapp.adapter.ProvinsiAdapter
 import com.coronaapp.api.RetrofitClient
 import com.coronaapp.databinding.ActivityProvinsiBinding
-import com.coronaapp.model.provinsiResponse
+import com.coronaapp.model.Province.ProvinsiResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,18 +33,18 @@ class ProvinsiActivity : AppCompatActivity() {
         binding.rvProvince.setHasFixedSize(true)
 
         RetrofitClient.instance.getProvinsi()
-            .enqueue(object : Callback<ArrayList<provinsiResponse>> {
+            .enqueue(object : Callback<ArrayList<ProvinsiResponse>> {
 
                 override fun onResponse(
-                    call: Call<ArrayList<provinsiResponse>>,
-                    response: Response<ArrayList<provinsiResponse>>
+                    call: Call<ArrayList<ProvinsiResponse>>,
+                    response: Response<ArrayList<ProvinsiResponse>>
                 ) {
                     val list = response.body()
                     val provinceAdapter = list?.let { ProvinsiAdapter(it) }
                     binding.rvProvince.adapter = provinceAdapter
                 }
 
-                override fun onFailure(call: Call<ArrayList<provinsiResponse>>, t: Throwable) {
+                override fun onFailure(call: Call<ArrayList<ProvinsiResponse>>, t: Throwable) {
                     Toast.makeText(this@ProvinsiActivity, t.message, Toast.LENGTH_SHORT).show()
                 }
 

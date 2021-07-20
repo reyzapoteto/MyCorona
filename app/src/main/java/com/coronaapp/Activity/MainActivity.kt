@@ -11,10 +11,9 @@ import com.coronaapp.adapter.GlobalAdapter
 import com.coronaapp.api.RetrofitClient
 import com.coronaapp.api.RetrofitClient_Day
 import com.coronaapp.databinding.ActivityMainBinding
-import com.coronaapp.model.UpdateAddedCovidResponse
+import com.coronaapp.model.Indonesia.IndonesiaResponse
 import com.coronaapp.model.UpdateCorona
 import com.coronaapp.model.globalResponse
-import com.coronaapp.model.indonesiaResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -90,10 +89,6 @@ class MainActivity : AppCompatActivity() {
               binding.tvCasesTreatDaily.text = responsenya?.TreatCases.toString()
               binding.tvDateCaseDaily.text = responsenya?.tanggal.toString()
 
-              Toast.makeText(this@MainActivity,responsenya?.positiveCases.toString(),Toast.LENGTH_SHORT).show()
-              Toast.makeText(this@MainActivity,responsenya?.RecoveredCases.toString(),Toast.LENGTH_SHORT).show()
-              Toast.makeText(this@MainActivity,responsenya?.DeathCases.toString(),Toast.LENGTH_SHORT).show()
-              Toast.makeText(this@MainActivity,responsenya?.TreatCases.toString(),Toast.LENGTH_SHORT).show()
           }
 
           override fun onFailure(call: Call<UpdateCorona>, t: Throwable) {
@@ -105,11 +100,11 @@ class MainActivity : AppCompatActivity() {
     }
     private fun showIndonesia() {
         RetrofitClient.instance.getIndonesia().enqueue(object :
-            Callback<ArrayList<indonesiaResponse>> {
+            Callback<ArrayList<IndonesiaResponse>> {
 
             override fun onResponse(
-                call: Call<ArrayList<indonesiaResponse>>,
-                response: Response<ArrayList<indonesiaResponse>>
+                call: Call<ArrayList<IndonesiaResponse>>,
+                response: Response<ArrayList<IndonesiaResponse>>
             ) {
 
                 // we catch the body of Api
@@ -127,7 +122,7 @@ class MainActivity : AppCompatActivity() {
                 binding.tvCountryName.text = caseCountry
             }
 
-            override fun onFailure(call: Call<ArrayList<indonesiaResponse>>, t: Throwable) {
+            override fun onFailure(call: Call<ArrayList<IndonesiaResponse>>, t: Throwable) {
                 Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
             }
 
