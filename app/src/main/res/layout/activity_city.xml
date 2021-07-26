@@ -6,10 +6,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.HospitalsActivity">
+        tools:context=".Activity.Bed_Covid.CityActivity">
 
         <LinearLayout
-            android:id="@+id/toolbarHospitals"
+            android:id="@+id/toolbarCityBedKosong"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/mainColor"
@@ -20,7 +20,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/btnBackHospitals"
+                android:id="@+id/btnBackCityBedKosong"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
-                android:text="Data RS Rujukan COVID-19"
+                android:text="Kota Bed Kosong Covid-19"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -41,7 +41,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_hospitals"
+            android:id="@+id/rv_cityBedKosong"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="20dp"
@@ -49,7 +49,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbarHospitals" />
+            app:layout_constraintTop_toBottomOf="@id/toolbarCityBedKosong" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,6 +1,6 @@
 package com.coronaapp.model.Bed_Kosong.Cities
 
-data class Province_Selected_Corona_BedKosong(
+data class City_Corona_BedKosong_Datamodel(
 
     val id: String,
     val name: String

@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.coronaapp.Activity.Bed_Covid.ProvinceActivity
 import com.coronaapp.R
 import com.coronaapp.adapter.GlobalAdapter
 import com.coronaapp.api.RetrofitClient
 import com.coronaapp.api.RetrofitClient_Day
+import com.coronaapp.api.Retrofit_Bed_Kosong
 import com.coronaapp.databinding.ActivityMainBinding
 import com.coronaapp.model.Indonesia.IndonesiaResponse
 import com.coronaapp.model.UpdateCorona
@@ -29,6 +31,12 @@ class MainActivity : AppCompatActivity() {
         showIndonesia()
         showGlobal()
         showIndonesiaDaily()
+
+        binding.cardCoronaBedKosong.setOnClickListener {
+            Intent(this,ProvinceActivity::class.java).also {
+                startActivity(it)
+            }
+        }
 
         binding.cardCoronaProvince.setOnClickListener {
             val intent = Intent(this, ProvinsiActivity::class.java)

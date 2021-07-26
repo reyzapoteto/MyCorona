@@ -893,6 +893,64 @@
 
                 </LinearLayout>
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardCoronaBedKosong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/background_indicators"
+                    android:backgroundTint="#8D2828"
+                    android:minHeight="60dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/indonesiaDailyCorona">
+
+                    <ImageView
+                        android:id="@+id/imgInfoBedKosong"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_infoprovince"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitleBedKosong"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="Data Bed Kosong Di Rumah Sakit"
+                        android:textColor="@color/mainColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imgInfoBedKosong"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Anda dapat menggunakan Data API Bed kosong utnuk mencari bed kosong di daerah Rumah sakit anda"
+                        android:textColor="@color/mainColor"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imgInfoBedKosong"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleBedKosong" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <TextView
                     android:id="@+id/tvTitleGlobal"
@@ -905,7 +963,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/indonesiaDailyCorona" />
+                    app:layout_constraintTop_toBottomOf="@id/cardCoronaBedKosong" />
 
                 <TextView
                     android:id="@+id/tvDescGlobal"
