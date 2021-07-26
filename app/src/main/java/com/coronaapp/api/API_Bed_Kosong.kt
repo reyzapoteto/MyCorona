@@ -26,6 +26,7 @@ interface API_Bed_Kosong {
         @Query("type") type: String
     ): Call<Hospital_Corona_BedKosong>
 
-    @GET("get-bed-detail?hospitalid={hospitalId}&type=1")
-    fun getHospitalsDetail(@Path("hospitalId") hospitalId: String): Call<Hospital_Details_BedKosong>
+    @GET("get-bed-detail")
+    fun getHospitalsDetail(@Query("hospitalid") hospitalId: String,
+                           @Query("type") type: String): Call<Hospital_Details_BedKosong>
 }

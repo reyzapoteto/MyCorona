@@ -14,9 +14,9 @@ import com.coronaapp.model.Bed_Kosong.Cities.City_Corona_BedKosong
 import org.w3c.dom.Text
 
 class CityBedKosongAdapter(
-    val listCityBedKosong: City_Corona_BedKosong,
+    private val listCityBedKosong: City_Corona_BedKosong,
     val activity: CityActivity,
-    val idProvince:String
+    private val idProvince:String
 ) : RecyclerView.Adapter<CityBedKosongAdapter.CityViewHolder>() {
 
     class CityViewHolder(view: View) : RecyclerView.ViewHolder(view) {
