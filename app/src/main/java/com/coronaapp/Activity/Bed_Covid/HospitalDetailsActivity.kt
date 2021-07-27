@@ -47,6 +47,10 @@ class HospitalDetailsActivity : AppCompatActivity() {
                 val address = responsenya?.address
                 val phone = responsenya?.phone
 
+                binding.tvTitleHospitalDetails.text = name
+                binding.tvHospitalAddress.text = address
+                binding.tvPhoneHospital.text = phone
+
                 val list = response.body()
                 val hospitalsDetailAdapter =
                     list?.let { HospitalDetailsKosongAdapter(this@HospitalDetailsActivity, it) }

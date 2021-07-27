@@ -80,6 +80,11 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<ArrayList<globalResponse>>, t: Throwable) {
                 Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
                 Log.i("ErrorGlobal", t.message.toString())
+                if(t.message == "timeout"){
+                    showGlobal()
+
+                }
+
             }
 
 
@@ -132,6 +137,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<ArrayList<IndonesiaResponse>>, t: Throwable) {
                 Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+                showIndonesia()
             }
 
         })
