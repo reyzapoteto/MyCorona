@@ -195,7 +195,7 @@
                 android:textSize="20sp"
                 android:padding="5dp"
                 android:textAlignment="center"
-                android:text="08184456"
+                android:text="-"
                 android:textStyle="bold"
                 android:drawablePadding="10dp"
                 android:textColor="#1F8868"/>
