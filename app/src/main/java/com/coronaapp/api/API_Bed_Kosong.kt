@@ -1,4 +1,4 @@
-package com.coronaapp.api
+    package com.coronaapp.api
 
 import com.coronaapp.model.Bed_Kosong.All_Provinces.Corona_Bed_Kosong
 import com.coronaapp.model.Bed_Kosong.Cities.City_Corona_BedKosong
@@ -27,10 +27,27 @@ interface API_Bed_Kosong {
         @Query("type") type: String
     ): Call<Hospital_Corona_BedKosong>
 
+
+    @GET("get-hospitals")
+    fun getHospitalsNonCovid(
+        @Query("provinceid") ProvinceId: String,
+        @Query("cityid") CityId: String,
+        @Query("type") type: String
+    ): Call<Hospital_Corona_BedKosong>
+
+
     @GET("get-bed-detail")
-    fun getHospitalsDetail(@Query("hospitalid") hospitalId: String,
-                           @Query("type") type: String): Call<Hospital_Details_BedKosong>
+    fun getHospitalsDetail(
+        @Query("hospitalid") hospitalId: String,
+        @Query("type") type: String
+    ): Call<Hospital_Details_BedKosong>
+
+    @GET("get-bed-detail")
+    fun getHospitalsNonCovidDetail(
+        @Query("hospitalid") hospitalId: String,
+        @Query("type") type: String
+    ): Call<Hospital_Details_BedKosong>
 
     @GET("get-hospital-map")
-    fun getHospitalsDetailMaps(@Query("hospitalid") hospitalId :String) :Call<Hospital_Data_Maps>
+    fun getHospitalsDetailMaps(@Query("hospitalid") hospitalId: String): Call<Hospital_Data_Maps>
 }

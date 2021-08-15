@@ -8,6 +8,5 @@ import retrofit2.http.GET
 interface Api_DayCovid {
 
     @GET("more")
-
     fun getDailyAdd(): Call<UpdateCorona>
 }

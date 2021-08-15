@@ -11,7 +11,33 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoronaApp">
-        <activity android:name=".Activity.Bed_Covid.HospitalDetailsActivity"></activity>
+        <activity
+            android:name=".Activity.SplashScreen"
+            android:exported="true"
+            android:noHistory="true"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/splashscreen">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".Activity.Bed_Non_Covid.Hospital_Non_Vocid_Details_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Bed_Non_Covid.Province_non_covid_activity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Bed_Non_Covid.Hospital_non_Covid_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Bed_Non_Covid.City_non_corona_Activity"
+            android:exported="true" />
+        <activity android:name=".Activity.Bed_Covid.HospitalDetailsActivity" />
         <activity android:name=".Activity.Bed_Covid.HospitalActivity" />
         <activity android:name=".Activity.Bed_Covid.CityActivity" />
         <activity android:name=".Activity.Bed_Covid.ProvinceActivity" />
@@ -30,13 +56,8 @@
         <activity
             android:name=".Activity.MainActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="fullSensor">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:screenOrientation="fullSensor" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

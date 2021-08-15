@@ -53,9 +53,8 @@ class HospitalDetailsActivity : AppCompatActivity() {
                 val gmaps = response?.gmaps
                 val latitude = response?.lat
                 val longitude = response?.long
-                val uri: String = String.format(Locale.ENGLISH, "geo:%f,%f", latitude, longitude)
 
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(gmaps))
                 startActivity(intent)
 
             }

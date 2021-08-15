@@ -23,4 +23,9 @@
     <style name="Theme.CoronaApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.CoronaApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="splashscreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
+    </style>
+
 </resources>

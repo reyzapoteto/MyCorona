@@ -20,7 +20,16 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        private const val STATE_RESULT_INFECTED = "state_result"
+        private const val STATE_RESULT_DEATH = "state_result_death"
+        private const val STATE_RESULT_RECOVERED = "state_result_recovered"
+        private const val STATE_RESULT_TREATED = "state_result_treated"
+
+    }
 
     private lateinit var binding: ActivityMainBinding
 
@@ -33,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         showIndonesiaDaily()
 
         binding.cardCoronaBedKosong.setOnClickListener {
-            Intent(this,ProvinceActivity::class.java).also {
+            Intent(this, ProvinceActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -44,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.cardCoronaProning.setOnClickListener {
-            Intent(this,ProningActivity::class.java).also {
+            Intent(this, ProningActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -61,6 +70,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        if (savedInstanceState != null) {
+            val result = savedInstanceState.getString(STATE_RESULT_INFECTED)
+            val resultRecovered = savedInstanceState.getString(STATE_RESULT_RECOVERED)
+            val resultDeath = savedInstanceState.getString(STATE_RESULT_DEATH)
+            val resultTreated = savedInstanceState.getString(STATE_RESULT_TREATED)
+            binding.tvDescInfected.text = result
+            binding.tvDescRecovered.text = resultRecovered
+            binding.tvDescDeath.text = resultDeath
+            binding.tvDescHospitallize.text = resultTreated
+        }
+
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(STATE_RESULT_INFECTED, binding.tvDescInfected.text.toString())
+        outState.putString(STATE_RESULT_DEATH, binding.tvDescDeath.text.toString())
+        outState.putString(STATE_RESULT_TREATED, binding.tvDescHospitallize.text.toString())
+        outState.putString(STATE_RESULT_RECOVERED, binding.tvDescRecovered.text.toString())
     }
 
     private fun showGlobal() {
@@ -80,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<ArrayList<globalResponse>>, t: Throwable) {
                 Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
                 Log.i("ErrorGlobal", t.message.toString())
-                if(t.message == "timeout"){
+                if (t.message == "timeout") {
                     showGlobal()
 
                 }
@@ -91,26 +119,27 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun showIndonesiaDaily(){
-      RetrofitClient_Day.instance.getDailyAdd().enqueue(object :Callback<UpdateCorona>{
-          override fun onResponse(call: Call<UpdateCorona>, response: Response<UpdateCorona>) {
-              val responsenya = response.body()?.penambahan
+    private fun showIndonesiaDaily() {
+        RetrofitClient_Day.instance.getDailyAdd().enqueue(object : Callback<UpdateCorona> {
+            override fun onResponse(call: Call<UpdateCorona>, response: Response<UpdateCorona>) {
+                val responsenya = response.body()?.penambahan
 
-              binding.tvCasesRecoveredDaily.text = responsenya?.RecoveredCases.toString()
-              binding.tvCasesDeathDaily.text = responsenya?.DeathCases.toString()
-              binding.tvCasesPositiveDaily.text = responsenya?.positiveCases.toString()
-              binding.tvCasesTreatDaily.text = responsenya?.TreatCases.toString()
-              binding.tvDateCaseDaily.text = responsenya?.tanggal.toString()
+                binding.tvCasesRecoveredDaily.text = responsenya?.RecoveredCases.toString()
+                binding.tvCasesDeathDaily.text = responsenya?.DeathCases.toString()
+                binding.tvCasesPositiveDaily.text = responsenya?.positiveCases.toString()
+                binding.tvCasesTreatDaily.text = responsenya?.TreatCases.toString()
+                binding.tvDateCaseDaily.text = responsenya?.tanggal.toString()
 
-          }
+            }
 
-          override fun onFailure(call: Call<UpdateCorona>, t: Throwable) {
-              Toast.makeText(this@MainActivity,t.message,Toast.LENGTH_SHORT).show()
-          }
+            override fun onFailure(call: Call<UpdateCorona>, t: Throwable) {
+                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+            }
 
-      })
+        })
 
     }
+
     private fun showIndonesia() {
         RetrofitClient.instance.getIndonesia().enqueue(object :
             Callback<ArrayList<IndonesiaResponse>> {
