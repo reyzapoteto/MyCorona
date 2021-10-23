@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="20dp">
@@ -13,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="10dp"
+        tools:targetApi="lollipop">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -28,13 +30,12 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/devider"
-                android:text="KALIMANTAN"
-                android:drawableTint="@color/grey"
                 android:drawablePadding="10dp"
-                android:drawableStart="@drawable/ic_baseline_location_on_24"
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="30dp"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp"
+                app:drawableTint="@color/grey"
+                app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
 
             <LinearLayout
                 android:id="@+id/devider"
@@ -55,13 +56,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/devider"
-                android:text="200,000"
-                android:drawableStart="@drawable/ic_baseline_coronavirus_24"
-                android:drawableTint="@color/grey"
                 android:drawablePadding="10dp"
                 android:textSize="22sp"
                 android:layout_marginTop="8dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_baseline_coronavirus_24"
+                tools:targetApi="m"
+                app:drawableTint="@color/grey" />
             <TextView
                 android:id="@+id/tvTitleCasesPositive"
                 android:layout_width="wrap_content"
@@ -69,7 +70,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvCasesPositive"
-                android:text="Kasus Positif yang terjadi Sekarang"
+                android:text="@string/kasus_positif_yang_terjadi_sekarang"
                 android:textSize="12sp"
                 android:textColor="@color/grey"
                 android:layout_marginTop="8dp"
@@ -84,7 +85,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvTitleCasesPositive"
                 android:layout_marginTop="10dp"
-                android:padding="5dp">
+                android:padding="5dp"
+                android:baselineAligned="false">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
@@ -97,11 +99,8 @@
                         android:id="@+id/tvCasesRecovered"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="24000"
-                        android:drawableTint="@color/green"
                         android:drawablePadding="8dp"
                         app:layout_constraintBottom_toTopOf="@id/tvCasesRecovered"
-                        android:drawableStart="@drawable/ic_baseline_moving_recovered_24"
                         android:textStyle="bold"
                         android:textSize="17sp"
                         android:textColor="@color/green"
@@ -110,7 +109,10 @@
                         android:textAlignment="center"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:drawableTint="@color/green"
+                        app:drawableStartCompat="@drawable/ic_baseline_moving_recovered_24" />
+
                     <TextView
                         android:id="@+id/tvTitleCaseRecovered"
                         android:layout_width="match_parent"
@@ -120,7 +122,7 @@
                         android:padding="2dp"
                         android:textStyle="bold"
                         android:textAlignment="center"
-                        android:text="Kasus yand Sembuh"
+                        android:text="@string/kasus_yand_sembuh"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="20dp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -140,11 +142,8 @@
                         android:id="@+id/tvCasesDeath"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="24000"
-                        android:drawableTint="@color/red"
                         android:drawablePadding="8dp"
                         app:layout_constraintBottom_toTopOf="@id/tvCasesDeath"
-                        android:drawableStart="@drawable/ic_baseline_moving_death_24"
                         android:textStyle="bold"
                         android:textSize="17sp"
                         android:textColor="@color/red"
@@ -153,7 +152,9 @@
                         android:textAlignment="center"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:drawableTint="@color/red"
+                        app:drawableStartCompat="@drawable/ic_baseline_moving_death_24" />
                     <TextView
                         android:id="@+id/tvTitleCaseDeath"
                         android:layout_width="match_parent"
@@ -163,7 +164,7 @@
                         android:padding="2dp"
                         android:textStyle="bold"
                         android:textAlignment="center"
-                        android:text="Kasus yand Meninggal"
+                        android:text="@string/kasus_yand_meninggal"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="20dp"
                         app:layout_constraintStart_toStartOf="parent"

@@ -1,5 +1,6 @@
 package com.coronaapp.adapter.BedKosong
 
+import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +16,8 @@ import org.w3c.dom.Text
 
 class CityBedKosongAdapter(
     private val listCityBedKosong: City_Corona_BedKosong,
-    val activity: CityActivity,
+    val activity: Activity,
+    private val activityDestination :Activity,
     private val idProvince:String
 ) : RecyclerView.Adapter<CityBedKosongAdapter.CityViewHolder>() {
 
@@ -37,7 +39,7 @@ class CityBedKosongAdapter(
         holder.name.text = listCityBedKosong.cities[position].name
 
         holder.background.setOnClickListener {
-            val intent = Intent(activity,HospitalActivity::class.java)
+            val intent = Intent(activity,activityDestination::class.java)
             intent.putExtra("idCity",idCity)
             intent.putExtra("idProvince",idProvince)
             activity.startActivity(intent)

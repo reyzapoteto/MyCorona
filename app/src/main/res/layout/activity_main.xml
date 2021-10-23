@@ -27,7 +27,7 @@
                     android:id="@+id/callCenter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/red"
+                    android:background="@color/accent"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -44,11 +44,33 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+                <ProgressBar
+                    android:id="@+id/progressMain"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:indeterminateTint="@color/mainColor"
+                    app:layout_constraintTop_toBottomOf="@id/callCenter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:indeterminateOnly="true"/>
+
+                <ImageButton
+                    android:id="@+id/imgButtonSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_settings_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/callCenter"
+                    android:background="@color/secondColor"
+                    android:layout_margin="16dp"
+                    tools:ignore="ContentDescription" />
                 <TextView
                     android:id="@+id/tvTitleCorona"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="8dp"
                     android:text="Penyakit Corona (Covid-19)"
                     android:textColor="@color/mainColor"
                     android:textSize="22sp"
@@ -56,7 +78,7 @@
                     app:layout_constraintBottom_toTopOf="@id/tvDescCorona"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/callCenter" />
+                    app:layout_constraintTop_toBottomOf="@id/imgButtonSettings" />
 
                 <TextView
                     android:id="@+id/tvDescCorona"
@@ -123,7 +145,7 @@
                             android:layout_margin="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/background_indicators"
-                            android:backgroundTint="@color/orange"
+                            android:backgroundTint="@color/accent"
                             android:padding="20dp"
                             tools:targetApi="lollipop">
 
@@ -169,7 +191,7 @@
                             android:layout_margin="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/background_indicators"
-                            android:backgroundTint="@color/red"
+                            android:backgroundTint="@color/accent"
                             android:padding="20dp"
                             tools:targetApi="lollipop">
 
@@ -231,7 +253,7 @@
                             android:layout_margin="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/background_indicators"
-                            android:backgroundTint="@color/green"
+                            android:backgroundTint="@color/accent"
                             android:padding="20dp"
                             tools:targetApi="lollipop">
 
@@ -276,7 +298,7 @@
                             android:layout_margin="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/background_indicators"
-                            android:backgroundTint="@color/light_blue"
+                            android:backgroundTint="@color/accent"
                             android:padding="20dp"
                             tools:targetApi="lollipop">
 
@@ -638,7 +660,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/background_indicators"
-                    android:backgroundTint="#FF2E63"
+                    android:backgroundTint="@color/accent"
                     android:minHeight="60dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -712,7 +734,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="80dp"
                             android:background="@drawable/background_indicators"
-                            android:backgroundTint="@color/green"
+                            android:backgroundTint="@color/accent"
                             android:orientation="vertical">
 
                             <TextView
@@ -720,7 +742,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:text="Sembuh"
-                                android:textColor="#2D4059"
+                                android:textColor="@color/mainColor"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
 
@@ -731,7 +753,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:layout_marginBottom="10dp"
                                 android:text="Recovered"
-                                android:textColor="#2D4059"
+                                android:textColor="@color/mainColor"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -742,7 +764,7 @@
                             android:layout_height="80dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/background_indicators"
-                            android:backgroundTint="@color/light_blue"
+                            android:backgroundTint="@color/accent"
                             android:orientation="vertical">
 
                             <TextView
@@ -750,7 +772,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
                                 android:text="Dirawat"
-                                android:textColor="#2D4059"
+                                android:textColor="@color/mainColor"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
 
@@ -761,7 +783,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:layout_marginBottom="10dp"
                                 android:text="Recovered"
-                                android:textColor="#2D4059"
+                                android:textColor="@color/mainColor"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -828,7 +850,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="80dp"
                             android:background="@drawable/background_indicators"
-                            android:backgroundTint="@color/orange"
+                            android:backgroundTint="@color/accent"
                             android:orientation="vertical">
 
                             <TextView
@@ -838,7 +860,7 @@
                                 android:layout_marginTop="10dp"
                                 android:text="Positif"
                                 android:textAlignment="textEnd"
-                                android:textColor="#FF7600"
+                                android:textColor="@color/mainColor"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
 
@@ -850,7 +872,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:text="Positive"
                                 android:textAlignment="textEnd"
-                                android:textColor="#FF7600"
+                                android:textColor="@color/mainColor"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -861,7 +883,7 @@
                             android:layout_height="80dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/background_indicators"
-                            android:backgroundTint="@color/red"
+                            android:backgroundTint="@color/accent"
                             android:orientation="vertical">
 
                             <TextView
@@ -870,7 +892,7 @@
                                 android:layout_margin="10dp"
                                 android:text="Meninggal"
                                 android:textAlignment="textEnd"
-                                android:textColor="#8D2828"
+                                android:textColor="@color/mainColor"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
 
@@ -882,7 +904,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:text="Death"
                                 android:textAlignment="textEnd"
-                                android:textColor="#8D2828"
+                                android:textColor="@color/mainColor"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -900,7 +922,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/background_indicators"
-                    android:backgroundTint="#8D2828"
+                    android:backgroundTint="@color/accent"
                     android:minHeight="60dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -912,7 +934,7 @@
                         android:layout_height="70dp"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginVertical="20dp"
-                        android:src="@drawable/ic_infoprovince"
+                        android:src="@drawable/iconcorona"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -958,7 +980,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/background_indicators"
-                    android:backgroundTint="#B61919"
+                    android:backgroundTint="@color/accent"
                     android:minHeight="60dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

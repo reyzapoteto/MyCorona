@@ -1,5 +1,6 @@
 package com.coronaapp.adapter.BedKosong
 
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,7 @@ import com.coronaapp.R
 import com.coronaapp.model.Bed_Kosong.Hospital_Detail.Hospital_Details_BedKosong
 
 class HospitalDetailsKosongAdapter(
-    val activity: HospitalDetailsActivity,
+    val activity: Activity,
     private val listHospitalDetails: Hospital_Details_BedKosong
 ) : RecyclerView.Adapter<HospitalDetailsKosongAdapter.HospitalDetailsViewHolder>() {
 
@@ -19,7 +20,7 @@ class HospitalDetailsKosongAdapter(
         val tvBedAvailable: TextView = itemView.findViewById(R.id.tvBedAvailableHospitalDetails)
         val tvBedEmpty: TextView = itemView.findViewById(R.id.tvBedKosongHospitalDetails)
         val tvQueue: TextView = itemView.findViewById(R.id.tvQueueHospitalDetails)
-        val tvDataUpdated :TextView = itemView.findViewById(R.id.tvDataUpdated)
+        val tvDataUpdated: TextView = itemView.findViewById(R.id.tvDataUpdated)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HospitalDetailsViewHolder {

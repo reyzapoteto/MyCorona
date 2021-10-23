@@ -1,5 +1,6 @@
 package com.coronaapp.adapter.BedKosong
 
+import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,10 @@ import com.coronaapp.Activity.Bed_Covid.ProvinceActivity
 import com.coronaapp.R
 import com.coronaapp.model.Bed_Kosong.All_Provinces.Corona_Bed_Kosong
 
-class ProvinceBedKosongAdapter(private val listProvinceBedKosong:Corona_Bed_Kosong , private val activity:ProvinceActivity) :RecyclerView.Adapter<ProvinceBedKosongAdapter.ProvinceViewholder>(){
+class ProvinceBedKosongAdapter(private val listProvinceBedKosong:Corona_Bed_Kosong,
+                               private val activity:Activity,
+                               private val activityDestination :Activity
+) :RecyclerView.Adapter<ProvinceBedKosongAdapter.ProvinceViewholder>(){
 
     class ProvinceViewholder(view :View):RecyclerView.ViewHolder(view){
         val background:ConstraintLayout = view.findViewById(R.id.background_ProvinceBedKosong)
@@ -29,7 +33,7 @@ class ProvinceBedKosongAdapter(private val listProvinceBedKosong:Corona_Bed_Koso
         val idProvince = listProvinceBedKosong.provinces[position].id
 
         holder.background.setOnClickListener {
-            val intent = Intent(activity,CityActivity::class.java)
+            val intent = Intent(activity,activityDestination::class.java)
             intent.putExtra("idProvince",idProvince)
             activity.startActivity(intent)
         }

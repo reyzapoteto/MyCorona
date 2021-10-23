@@ -19,7 +19,8 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop">
 
             <ImageButton
                 android:id="@+id/btnBackProning"
@@ -28,14 +29,15 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:background="@color/mainColor"
-                android:src="@drawable/ic_baseline_back_24" />
+                android:src="@drawable/ic_baseline_back_24"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
-                android:text="Teknik Proning"
+                android:text="@string/teknik_proning"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -64,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Teknik Proning (Tengkurap)"
+                    android:text="@string/teknik_proning_tengkurap"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -77,7 +79,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/illustrasi_proning" />
+                    android:src="@drawable/illustrasi_proning"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="match_parent"

@@ -2,6 +2,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/background_CityBedKosong"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,7 +10,8 @@
     android:layout_marginTop="15dp"
     android:backgroundTint="#EEEEEE"
     android:background="@drawable/background_indicators"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:targetApi="lollipop">
 
     <TextView
         android:id="@+id/tvTitleCityBedKosong"
@@ -21,7 +23,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textColor="@color/black"
-        android:text="ini adalah contoh"
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="40dp"
         android:textStyle="bold"/>

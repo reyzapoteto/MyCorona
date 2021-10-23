@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Bed_Non_Covid.Province_non_covid_activity">
+    tools:context=".Activity.Vaksinasi.JenisVaksinasi">
 
     <LinearLayout
-        android:id="@+id/toolbarProvinceBedKosongNonCovid"
+        android:id="@+id/toolbarCityBedKosong"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/mainColor"
@@ -19,7 +19,7 @@
         tools:targetApi="lollipop">
 
         <ImageButton
-            android:id="@+id/btnBackProvinceBedKosongNonCovid"
+            android:id="@+id/btnBackJenisVaksin"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
@@ -33,34 +33,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
-            android:text="@string/provinsi_bed_kosong_non_covid"
+            android:text="Jenis Vaksin"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progProvince"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="invisible"
-        android:indeterminateTint="@color/accent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="lollipop" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_ProvinceBedKosongNonCovid"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="20dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbarProvinceBedKosongNonCovid" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,19 @@
         android:layout_height="match_parent"
         tools:context=".Activity.Bed_Covid.ProvinceActivity">
 
+        <ProgressBar
+            android:id="@+id/progProvince"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="invisible"
+            android:indeterminateTint="@color/accent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop" />
+
+
         <LinearLayout
             android:id="@+id/toolbarProvinceBedKosong"
             android:layout_width="match_parent"
@@ -18,7 +31,8 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop">
 
             <ImageButton
                 android:id="@+id/btnBackProvinceBedKosong"
@@ -27,14 +41,15 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:background="@color/mainColor"
-                android:src="@drawable/ic_baseline_back_24" />
+                android:src="@drawable/ic_baseline_back_24"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
-                android:text="Provinsi (Covid-19)"
+                android:text="@string/provinsi_covid_19"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />

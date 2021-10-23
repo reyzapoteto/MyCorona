@@ -12,40 +12,59 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoronaApp">
         <activity
+            android:name=".Activity.Settings.LicenseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Settings.SettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Vaksinasi.JenisVaksinasi"
+            android:exported="true" />
+        <activity
             android:name=".Activity.SplashScreen"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="fullSensor"
             android:theme="@style/splashscreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Activity.Bed_Non_Covid.Hospital_Non_Vocid_Details_Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.Bed_Non_Covid.Province_non_covid_activity"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.Bed_Non_Covid.Hospital_non_Covid_Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.Bed_Non_Covid.City_non_corona_Activity"
-            android:exported="true" />
-        <activity android:name=".Activity.Bed_Covid.HospitalDetailsActivity" />
-        <activity android:name=".Activity.Bed_Covid.HospitalActivity" />
-        <activity android:name=".Activity.Bed_Covid.CityActivity" />
-        <activity android:name=".Activity.Bed_Covid.ProvinceActivity" />
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.Bed_Covid.HospitalDetailsActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.Bed_Covid.HospitalActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.Bed_Covid.CityActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.Bed_Covid.ProvinceActivity"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.ProningActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name=".Activity.VaccineActivity"
+            android:name=".Activity.Vaksinasi.VaccineActivity"
             android:launchMode="singleTop" />
         <activity
             android:name=".Activity.HospitalsActivity"
@@ -57,7 +76,6 @@
             android:name=".Activity.MainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="fullSensor" />
-
     </application>
 
 </manifest>

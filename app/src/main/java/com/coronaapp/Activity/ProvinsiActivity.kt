@@ -3,11 +3,12 @@ package com.coronaapp.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.coronaapp.R
-import com.coronaapp.adapter.ProvinsiAdapter
-import com.coronaapp.api.RetrofitClient
+import com.coronaapp.adapter.Province.ProvinsiAdapter
+import com.coronaapp.api.Retrofit.RetrofitClient
 import com.coronaapp.databinding.ActivityProvinsiBinding
 import com.coronaapp.model.Province.ProvinsiResponse
 import retrofit2.Call
@@ -31,7 +32,7 @@ class ProvinsiActivity : AppCompatActivity() {
 
     private fun showProvince() {
         binding.rvProvince.setHasFixedSize(true)
-
+        binding.progProvince.visibility = View.VISIBLE
         RetrofitClient.instance.getProvinsi()
             .enqueue(object : Callback<ArrayList<ProvinsiResponse>> {
 
@@ -42,10 +43,13 @@ class ProvinsiActivity : AppCompatActivity() {
                     val list = response.body()
                     val provinceAdapter = list?.let { ProvinsiAdapter(it) }
                     binding.rvProvince.adapter = provinceAdapter
+                    binding.progProvince.visibility = View.INVISIBLE
                 }
 
                 override fun onFailure(call: Call<ArrayList<ProvinsiResponse>>, t: Throwable) {
                     Toast.makeText(this@ProvinsiActivity, t.message, Toast.LENGTH_SHORT).show()
+                    binding.progProvince.visibility = View.INVISIBLE
+
                 }
 
             })

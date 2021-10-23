@@ -1,5 +1,6 @@
 package com.coronaapp.adapter.BedKosong
 
+import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +16,8 @@ import com.coronaapp.model.Bed_Kosong.Hospitals.Hospital_Corona_BedKosong
 
 class HospitalsKosongAdapter(
     private val listHospitals: Hospital_Corona_BedKosong,
-    val activity: HospitalActivity
+    val activity: Activity,
+    private val activityDestination :Activity
 )
 
     : RecyclerView.Adapter<HospitalsKosongAdapter.HospitalViewHolder>() {
@@ -47,7 +49,7 @@ class HospitalsKosongAdapter(
 
         holder.backgroundHospitals.setOnClickListener {
             val idHospitals = listHospitals.hospitals[position].id
-            val intent = Intent(activity, HospitalDetailsActivity::class.java)
+            val intent = Intent(activity, activityDestination::class.java)
             intent.putExtra("idHospital", idHospitals)
             activity.startActivity(intent)
         }

@@ -1,4 +1,4 @@
-package com.coronaapp.api
+package com.coronaapp.api.API
 
 import com.coronaapp.model.Vaccine.VaccineResponse
 import retrofit2.Call

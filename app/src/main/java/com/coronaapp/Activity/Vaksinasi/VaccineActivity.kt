@@ -1,12 +1,13 @@
-package com.coronaapp.Activity
+package com.coronaapp.Activity.Vaksinasi
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.coronaapp.Activity.MainActivity
 import com.coronaapp.R
-import com.coronaapp.api.Retrofit_Vaccine
+import com.coronaapp.api.Retrofit.Retrofit_Vaccine
 import com.coronaapp.databinding.ActivityVaccineBinding
 import com.coronaapp.model.Vaccine.VaccineResponse
 import retrofit2.Call
@@ -19,20 +20,25 @@ class VaccineActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_vaccine)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_vaccine)
 
         binding.btnBackVaccine.setOnClickListener {
-            Intent(this,MainActivity::class.java).also {
+            Intent(this, MainActivity::class.java).also {
                 startActivity(it)
             }
         }
 
+        binding.btnJenisVaksin.setOnClickListener {
+            Intent(this, JenisVaksinasi::class.java).also {
+                startActivity(it)
+            }
+        }
         showVaccine()
-
     }
 
     private fun showVaccine() {
-        Retrofit_Vaccine.instance.getVaccine().enqueue(object : Callback<VaccineResponse>{
+
+        Retrofit_Vaccine.instance.getVaccine().enqueue(object : Callback<VaccineResponse> {
             override fun onFailure(call: Call<VaccineResponse>, t: Throwable) {
                 Toast.makeText(this@VaccineActivity, t.message, Toast.LENGTH_SHORT).show()
             }

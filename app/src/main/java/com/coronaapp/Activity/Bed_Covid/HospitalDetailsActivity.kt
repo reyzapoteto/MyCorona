@@ -3,12 +3,13 @@ package com.coronaapp.Activity.Bed_Covid
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.coronaapp.R
 import com.coronaapp.adapter.BedKosong.HospitalDetailsKosongAdapter
-import com.coronaapp.api.Retrofit_Bed_Kosong
+import com.coronaapp.api.Retrofit.Retrofit_Bed_Kosong
 import com.coronaapp.databinding.ActivityHospitalDetailsBinding
 import com.coronaapp.model.Bed_Kosong.Hospital_Detail.Hospital_Details_BedKosong
 import com.coronaapp.model.Bed_Kosong.Hospital_Maps.Hospital_Data_Maps
@@ -51,8 +52,6 @@ class HospitalDetailsActivity : AppCompatActivity() {
             ) {
                 val response = response.body()?.data
                 val gmaps = response?.gmaps
-                val latitude = response?.lat
-                val longitude = response?.long
 
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(gmaps))
                 startActivity(intent)
@@ -67,6 +66,7 @@ class HospitalDetailsActivity : AppCompatActivity() {
     }
 
     private fun showDataBedKosong() {
+        binding.progHospital.visibility = View.VISIBLE
         Retrofit_Bed_Kosong.instance.getHospitalsDetail(idHospitals, "1").enqueue(object :
             Callback<Hospital_Details_BedKosong> {
 
@@ -77,7 +77,6 @@ class HospitalDetailsActivity : AppCompatActivity() {
 
                 val responsenya = response.body()?.data
                 val name = responsenya?.name
-                val id = responsenya?.id
                 val address = responsenya?.address
                 val phone = responsenya?.phone
 
@@ -89,11 +88,12 @@ class HospitalDetailsActivity : AppCompatActivity() {
                 val hospitalsDetailAdapter =
                     list?.let { HospitalDetailsKosongAdapter(this@HospitalDetailsActivity, it) }
                 binding.rvHospitalsDetailsBedKosong.adapter = hospitalsDetailAdapter
-
+                binding.progHospital.visibility = View.INVISIBLE
             }
 
             override fun onFailure(call: Call<Hospital_Details_BedKosong>, t: Throwable) {
                 Toast.makeText(this@HospitalDetailsActivity, t.message, Toast.LENGTH_SHORT).show()
+                binding.progHospital.visibility = View.INVISIBLE
             }
 
         })

@@ -1,4 +1,4 @@
-package com.coronaapp.api
+package com.coronaapp.api.API
 
 import com.coronaapp.model.Indonesia.IndonesiaResponse
 import com.coronaapp.model.Province.ProvinsiResponse

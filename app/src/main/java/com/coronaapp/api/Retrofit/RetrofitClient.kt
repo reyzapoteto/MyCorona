@@ -1,9 +1,9 @@
-package com.coronaapp.api
+package com.coronaapp.api.Retrofit
 
+import com.coronaapp.api.API.Api
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.sql.Time
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {

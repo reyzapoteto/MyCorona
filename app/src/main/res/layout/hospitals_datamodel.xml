@@ -2,6 +2,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -28,7 +29,8 @@
                 android:src="@drawable/ic_hospitalicon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvNameHospital"
@@ -36,7 +38,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
-                android:text="Name Hospital"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -50,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:text="Address"
+                android:text="@string/alamat"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="normal"
@@ -65,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:text="Region"
+                android:text="@string/wilayah"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="normal"
@@ -79,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:text="phone"
+                android:text="@string/no_hp"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -95,26 +96,26 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/grey"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/avatarHospital"
-                app:layout_constraintTop_toBottomOf="@id/tvPhoneHospital"
-                android:orientation="horizontal" />
+                app:layout_constraintTop_toBottomOf="@id/tvPhoneHospital" />
 
             <TextView
                 android:id="@+id/tvProvinceHospitals"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/avatarHospital"
-                android:textSize="18sp"
-                android:textColor="@color/black"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/dividerHospitals"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:text="Province"
                 android:layout_marginBottom="20dp"
-                android:textStyle="bold"/>
+                android:text="@string/provinsi"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/avatarHospital"
+                app:layout_constraintTop_toBottomOf="@id/dividerHospitals" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

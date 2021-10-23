@@ -1,4 +1,4 @@
-package com.coronaapp.adapter
+package com.coronaapp.adapter.Global
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.coronaapp.R
 import com.coronaapp.model.globalResponse
 import java.text.NumberFormat
-import java.util.*
 import kotlin.collections.ArrayList
 
 class GlobalAdapter(private val listGlobal:ArrayList<globalResponse>):RecyclerView.Adapter<GlobalAdapter.GlobalViewHolder>() {

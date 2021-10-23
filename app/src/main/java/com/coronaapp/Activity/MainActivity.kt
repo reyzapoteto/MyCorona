@@ -4,14 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.coronaapp.Activity.Bed_Covid.ProvinceActivity
+import com.coronaapp.Activity.Bed_Non_Covid.Province_non_covid_activity
+import com.coronaapp.Activity.Settings.SettingsActivity
+import com.coronaapp.Activity.Vaksinasi.VaccineActivity
 import com.coronaapp.R
-import com.coronaapp.adapter.GlobalAdapter
-import com.coronaapp.api.RetrofitClient
-import com.coronaapp.api.RetrofitClient_Day
-import com.coronaapp.api.Retrofit_Bed_Kosong
+import com.coronaapp.adapter.Global.GlobalAdapter
+import com.coronaapp.api.Retrofit.RetrofitClient
+import com.coronaapp.api.Retrofit.RetrofitClient_Day
 import com.coronaapp.databinding.ActivityMainBinding
 import com.coronaapp.model.Indonesia.IndonesiaResponse
 import com.coronaapp.model.UpdateCorona
@@ -24,12 +27,17 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     companion object {
+
         private const val STATE_RESULT_INFECTED = "state_result"
         private const val STATE_RESULT_DEATH = "state_result_death"
         private const val STATE_RESULT_RECOVERED = "state_result_recovered"
         private const val STATE_RESULT_TREATED = "state_result_treated"
 
     }
+
+    private var valueIndonesia: Boolean = false
+    private var valueGlobal: Boolean = false
+    private var valueDaily: Boolean = false
 
     private lateinit var binding: ActivityMainBinding
 
@@ -43,6 +51,17 @@ class MainActivity : AppCompatActivity() {
 
         binding.cardCoronaBedKosong.setOnClickListener {
             Intent(this, ProvinceActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        binding.imgButtonSettings.setOnClickListener {
+            Intent(this, SettingsActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+        binding.cardNonCoronaBedKosong.setOnClickListener {
+            Intent(this, Province_non_covid_activity::class.java).also {
                 startActivity(it)
             }
         }
@@ -94,6 +113,7 @@ class MainActivity : AppCompatActivity() {
     private fun showGlobal() {
 
         binding.rvGlobal.setHasFixedSize(true)
+        binding.progressMain.visibility = View.VISIBLE
 
         RetrofitClient.instance.getGlobal().enqueue(object : Callback<ArrayList<globalResponse>> {
             override fun onResponse(
@@ -103,14 +123,16 @@ class MainActivity : AppCompatActivity() {
                 val list = response.body()
                 val globalAdapter = list?.let { GlobalAdapter(it) }
                 binding.rvGlobal.adapter = globalAdapter
+                valueGlobal = true
+                binding.progressMain.visibility = View.INVISIBLE
             }
 
             override fun onFailure(call: Call<ArrayList<globalResponse>>, t: Throwable) {
                 Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
                 Log.i("ErrorGlobal", t.message.toString())
+                binding.progressMain.visibility = View.INVISIBLE
                 if (t.message == "timeout") {
                     showGlobal()
-
                 }
 
             }
@@ -120,6 +142,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showIndonesiaDaily() {
+        binding.progressMain.visibility = View.VISIBLE
+
         RetrofitClient_Day.instance.getDailyAdd().enqueue(object : Callback<UpdateCorona> {
             override fun onResponse(call: Call<UpdateCorona>, response: Response<UpdateCorona>) {
                 val responsenya = response.body()?.penambahan
@@ -129,11 +153,14 @@ class MainActivity : AppCompatActivity() {
                 binding.tvCasesPositiveDaily.text = responsenya?.positiveCases.toString()
                 binding.tvCasesTreatDaily.text = responsenya?.TreatCases.toString()
                 binding.tvDateCaseDaily.text = responsenya?.tanggal.toString()
+                valueDaily = true
+                binding.progressMain.visibility = View.INVISIBLE
 
             }
 
             override fun onFailure(call: Call<UpdateCorona>, t: Throwable) {
                 Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+                binding.progressMain.visibility = View.INVISIBLE
             }
 
         })
@@ -141,6 +168,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showIndonesia() {
+        binding.progressMain.visibility = View.VISIBLE
+
         RetrofitClient.instance.getIndonesia().enqueue(object :
             Callback<ArrayList<IndonesiaResponse>> {
 
@@ -162,11 +191,17 @@ class MainActivity : AppCompatActivity() {
                 binding.tvDescHospitallize.text = caseHospitalize
                 binding.tvDescRecovered.text = caseNegatif
                 binding.tvCountryName.text = caseCountry
+                binding.progressMain.visibility = View.INVISIBLE
+                valueIndonesia = true
+                binding.progressMain.visibility = View.INVISIBLE
+
             }
 
             override fun onFailure(call: Call<ArrayList<IndonesiaResponse>>, t: Throwable) {
                 Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+                binding.progressMain.visibility = View.INVISIBLE
                 showIndonesia()
+
             }
 
         })

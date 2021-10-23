@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Bed_Non_Covid.Province_non_covid_activity">
+    tools:context=".Activity.Settings.SettingsActivity">
 
     <LinearLayout
-        android:id="@+id/toolbarProvinceBedKosongNonCovid"
+        android:id="@+id/toolbarSettings"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/mainColor"
@@ -19,7 +19,7 @@
         tools:targetApi="lollipop">
 
         <ImageButton
-            android:id="@+id/btnBackProvinceBedKosongNonCovid"
+            android:id="@+id/btnBackSettings"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
@@ -33,34 +33,58 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
-            android:text="@string/provinsi_bed_kosong_non_covid"
+            android:text="@string/pengaturan"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progProvince"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="invisible"
-        android:indeterminateTint="@color/accent"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/ShareAppsSectionn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="8dp"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="lollipop" />
+        app:layout_constraintTop_toBottomOf="@id/toolbarSettings"
+        tools:targetApi="lollipop">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_ProvinceBedKosongNonCovid"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="20dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_apps"
+            android:textColor="@color/secondColor"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LicenseSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:elevation="8dp"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbarProvinceBedKosongNonCovid" />
+        app:layout_constraintTop_toBottomOf="@id/ShareAppsSectionn"
+        tools:targetApi="lollipop"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lisensi_dan_dokumentasi"
+            android:textColor="@color/secondColor"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

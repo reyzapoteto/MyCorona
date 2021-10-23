@@ -2,13 +2,13 @@ package com.coronaapp.Activity.Bed_Covid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.coronaapp.R
 import com.coronaapp.adapter.BedKosong.HospitalsKosongAdapter
-import com.coronaapp.api.Retrofit_Bed_Kosong
+import com.coronaapp.api.Retrofit.Retrofit_Bed_Kosong
 import com.coronaapp.databinding.ActivityHospitalBinding
-import com.coronaapp.databinding.ActivityHospitalsBinding
 import com.coronaapp.model.Bed_Kosong.Hospitals.Hospital_Corona_BedKosong
 import retrofit2.Call
 import retrofit2.Callback
@@ -37,7 +37,7 @@ class HospitalActivity : AppCompatActivity() {
 
     private fun showDataHospitals() {
         binding.rvHospitalsBedKosong.setHasFixedSize(true)
-
+        binding.progHospital.visibility = View.VISIBLE
         Retrofit_Bed_Kosong.instance.getHospitalsCovid(idProvince, idCity, "1").enqueue(object :
             Callback<Hospital_Corona_BedKosong> {
 
@@ -47,14 +47,23 @@ class HospitalActivity : AppCompatActivity() {
             ) {
                 val list = response.body()
                 val hospitalAdapter = list?.let {
-                    HospitalsKosongAdapter(it, this@HospitalActivity)
+                    HospitalsKosongAdapter(it, this@HospitalActivity, HospitalDetailsActivity())
                 }
+                if (response.body()?.hospitals!!.size == 0) {
+                    Toast.makeText(
+                        this@HospitalActivity,
+                        "Tidak ada RS tersedia",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                binding.progHospital.visibility = View.INVISIBLE
                 binding.rvHospitalsBedKosong.adapter = hospitalAdapter
 
             }
 
             override fun onFailure(call: Call<Hospital_Corona_BedKosong>, t: Throwable) {
                 Toast.makeText(this@HospitalActivity, t.message, Toast.LENGTH_SHORT).show()
+                binding.progHospital.visibility = View.INVISIBLE
             }
 
         })

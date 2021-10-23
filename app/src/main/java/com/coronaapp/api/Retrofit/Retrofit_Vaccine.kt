@@ -1,5 +1,6 @@
-package com.coronaapp.api
+package com.coronaapp.api.Retrofit
 
+import com.coronaapp.api.API.API_Vaccine
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

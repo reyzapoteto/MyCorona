@@ -1,4 +1,4 @@
-package com.coronaapp.adapter
+package com.coronaapp.adapter.Province
 
 import android.view.LayoutInflater
 import android.view.View
