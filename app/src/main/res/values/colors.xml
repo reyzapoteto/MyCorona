@@ -2,6 +2,7 @@
 <resources>
     <color name="mainColor">#fff</color>
     <color name="grey">#BDBDBD</color>
+    <color name="darkgrey">#9E9E9E</color>
     <color name="secondColor">#242142</color>
 
     <color name="red">#FF5959</color>

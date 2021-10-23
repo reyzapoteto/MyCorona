@@ -38,7 +38,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_margin="5dp"
-                        android:text="Apabila dalam keadaan darurat hubungi (112) bebas pulsa"
+                        android:text="@string/desc_telp_darurat"
                         android:textAlignment="center"
                         android:textColor="@color/mainColor"
                         android:textStyle="bold" />
@@ -54,7 +54,8 @@
                     app:layout_constraintTop_toBottomOf="@id/callCenter"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:indeterminateOnly="true"/>
+                    android:indeterminateOnly="true"
+                    tools:targetApi="lollipop" />
 
                 <ImageButton
                     android:id="@+id/imgButtonSettings"
@@ -71,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Penyakit Corona (Covid-19)"
+                    android:text="@string/title_covid"
                     android:textColor="@color/mainColor"
                     android:textSize="22sp"
                     android:textStyle="bold"
@@ -90,7 +91,7 @@
                     android:fontFamily="sans-serif-thin"
                     android:gravity="center_horizontal"
                     android:padding="5dp"
-                    android:text="Semua hal tentang Perkembangan dan Statistik dari Penyakit pandemi covid-19 yang terjadi di negara indonesia beserta indicatornya"
+                    android:text="@string/desc_covid"
                     android:textAlignment="center"
                     android:textColor="@color/grey"
                     android:textSize="12sp"
@@ -105,7 +106,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:drawableStart="@drawable/ic_baseline_location_on_24"
                     android:drawablePadding="10dp"
                     android:fontFamily="sans-serif-black"
                     android:textColor="@color/mainColor"
@@ -113,7 +113,8 @@
                     app:layout_constraintBottom_toTopOf="@id/indicators"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvDescCorona" />
+                    app:layout_constraintTop_toBottomOf="@id/tvDescCorona"
+                    app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -154,7 +155,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif"
-                                android:text="Terinfeksi"
+                                android:text="@string/terinfeksi"
                                 android:textColor="@color/mainColor"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -176,7 +177,6 @@
                                 android:ellipsize="end"
                                 android:fontFamily="sans-serif-black"
                                 android:maxLines="3"
-                                android:text="-"
                                 android:textColor="@color/mainColor"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
@@ -201,7 +201,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif"
-                                android:text="Meninggal"
+                                android:text="@string/meninggal"
                                 android:textColor="@color/mainColor"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -223,7 +223,6 @@
                                 android:ellipsize="end"
                                 android:fontFamily="sans-serif-black"
                                 android:maxLines="1"
-                                android:text="-"
                                 android:textColor="@color/mainColor"
                                 android:textSize="24sp"
                                 android:textStyle="bold"
@@ -262,7 +261,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif"
-                                android:text="Sembuh"
+                                android:text="@string/sembuh"
                                 android:textColor="@color/mainColor"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -284,7 +283,6 @@
                                 android:ellipsize="end"
                                 android:fontFamily="sans-serif-black"
                                 android:maxLines="3"
-                                android:text="-"
                                 android:textColor="@color/mainColor"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
@@ -307,7 +305,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif"
-                                android:text="Dirawat"
+                                android:text="@string/dirawat"
                                 android:textColor="@color/mainColor"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -329,7 +327,6 @@
                                 android:ellipsize="end"
                                 android:fontFamily="sans-serif-black"
                                 android:maxLines="1"
-                                android:text="-"
                                 android:textColor="@color/mainColor"
                                 android:textSize="24sp"
                                 android:textStyle="bold"
@@ -352,7 +349,8 @@
                 android:backgroundTint="@color/mainColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mainIndicators">
+                app:layout_constraintTop_toBottomOf="@id/mainIndicators"
+                tools:targetApi="lollipop">
 
                 <TextView
                     android:id="@+id/tvTitlePrevention"
@@ -360,7 +358,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="30dp"
-                    android:text="Pencegahan Virus COVID-19"
+                    android:text="@string/pencegahan_virus_covid_19"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -378,7 +376,8 @@
                     android:weightSum="3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvTitlePrevention">
+                    app:layout_constraintTop_toBottomOf="@id/tvTitlePrevention"
+                    android:baselineAligned="false">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="0dp"
@@ -390,10 +389,11 @@
                             android:id="@+id/imgWashHand"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_wash_hand"
+                            android:src="@drawable/ikon_1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -401,7 +401,7 @@
                             android:layout_marginHorizontal="3dp"
                             android:layout_marginTop="5dp"
                             android:minLines="2"
-                            android:text="Selalu Mencuci Tangan"
+                            android:text="@string/desc_ikon1"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="10sp"
@@ -409,7 +409,8 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/imgWashHand" />
+                            app:layout_constraintTop_toBottomOf="@id/imgWashHand"
+                            tools:ignore="SmallSp" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -423,10 +424,11 @@
                             android:id="@+id/imgSocialDistancing"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_social_distancing"
+                            android:src="@drawable/ikon_2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -434,14 +436,15 @@
                             android:layout_marginHorizontal="3dp"
                             android:layout_marginTop="5dp"
                             android:minLines="2"
-                            android:text="Terapkan \nJaga Jarak"
+                            android:text="@string/desc_ikon2"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="10sp"
                             android:textStyle="normal"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/imgSocialDistancing" />
+                            app:layout_constraintTop_toBottomOf="@id/imgSocialDistancing"
+                            tools:ignore="SmallSp" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -455,10 +458,11 @@
                             android:id="@+id/imgUseMask"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/ic_use_mask"
+                            android:src="@drawable/ikon_3"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -466,14 +470,15 @@
                             android:layout_marginHorizontal="3dp"
                             android:layout_marginTop="5dp"
                             android:minLines="2"
-                            android:text="Selalu Menggunakan 2 Masker"
+                            android:text="@string/desc_ikon3"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="10sp"
                             android:textStyle="normal"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/imgUseMask" />
+                            app:layout_constraintTop_toBottomOf="@id/imgUseMask"
+                            tools:ignore="SmallSp" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -491,7 +496,8 @@
                     app:layout_constraintBottom_toTopOf="@id/layout_card"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/indicatorsPrevention">
+                    app:layout_constraintTop_toBottomOf="@id/indicatorsPrevention"
+                    tools:targetApi="lollipop">
 
                     <ImageView
                         android:id="@+id/imgInfoProvince"
@@ -499,10 +505,11 @@
                         android:layout_height="70dp"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginVertical="20dp"
-                        android:src="@drawable/ic_infoprovince"
+                        android:src="@drawable/ikon_bed_non_corona"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/tvTitleProvince"
@@ -511,7 +518,7 @@
                         android:layout_marginStart="13dp"
                         android:layout_marginTop="25dp"
                         android:layout_marginEnd="10dp"
-                        android:text="Penyebaran Corona di Setiap Provinsi"
+                        android:text="@string/title_rs"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -526,7 +533,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="15dp"
                         android:layout_marginBottom="8dp"
-                        android:text="Cari Penyebaran Virus Corona COVID-19 di daerah anda secara realtime"
+                        android:text="@string/desc_rs"
                         android:textColor="@color/grey"
                         android:textSize="12sp"
                         android:textStyle="bold"
@@ -548,7 +555,8 @@
                     android:weightSum="2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardCoronaProvince">
+                    app:layout_constraintTop_toBottomOf="@id/cardCoronaProvince"
+                    android:baselineAligned="false">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/card_Hospitals"
@@ -557,24 +565,26 @@
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/background_indicators"
-                        android:backgroundTint="@color/colorBackground">
+                        android:backgroundTint="@color/colorBackground"
+                        tools:targetApi="lollipop">
 
                         <ImageView
                             android:id="@+id/img_hospitals"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_margin="10dp"
-                            android:src="@drawable/ic_hospitals"
+                            android:src="@drawable/ikon_rs_rujuakan"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:id="@+id/titleHospitals"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Rs Rujukan"
+                            android:text="@string/title_rstujukan"
                             android:textColor="@color/black"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -590,7 +600,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="15dp"
                             android:padding="5dp"
-                            android:text="Data-Data Rumah sakit rujukan  penyakit COVID -19 di seluruh indonesia"
+                            android:text="@string/desc_rsprovinsi"
                             android:textAlignment="center"
                             android:textColor="@color/grey"
                             android:textSize="12sp"
@@ -608,7 +618,8 @@
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/background_indicators"
-                        android:backgroundTint="@color/colorBackground">
+                        android:backgroundTint="@color/colorBackground"
+                        tools:targetApi="lollipop">
 
                         <ImageView
                             android:id="@+id/img_vaccine"
@@ -618,14 +629,15 @@
                             android:src="@drawable/ic_vaccine"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:id="@+id/titleVaccine"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Data Vaksinasi"
+                            android:text="@string/data_vaksinasi"
                             android:textColor="@color/black"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -641,7 +653,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="15dp"
                             android:padding="5dp"
-                            android:text="Data laju perkembangan Vaksinasi yang ada di Indonesia"
+                            android:text="@string/data_laju_perkembangan_vaksinasi_yang_ada_di_indonesia"
                             android:textAlignment="center"
                             android:textColor="@color/grey"
                             android:textSize="12sp"
@@ -664,7 +676,8 @@
                     android:minHeight="60dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/layout_card">
+                    app:layout_constraintTop_toBottomOf="@id/layout_card"
+                    tools:targetApi="lollipop">
 
                     <ImageView
                         android:id="@+id/imgInfoProning"
@@ -672,10 +685,11 @@
                         android:layout_height="70dp"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginVertical="20dp"
-                        android:src="@drawable/ic_infoprovince"
+                        android:src="@drawable/ikon_proning"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/tvTitleProning"
@@ -684,7 +698,7 @@
                         android:layout_marginStart="13dp"
                         android:layout_marginTop="25dp"
                         android:layout_marginEnd="10dp"
-                        android:text="Teknik Proning untuk Pernapasan"
+                        android:text="@string/title_proning"
                         android:textColor="@color/mainColor"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -699,7 +713,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="15dp"
                         android:layout_marginBottom="8dp"
-                        android:text="Cara yang Manjur dilakukan saat batas kadar udara maupun oksigen  kurang dari 94%"
+                        android:text="@string/desc_proning_card"
                         android:textColor="@color/mainColor"
                         android:textSize="12sp"
                         android:textStyle="bold"
@@ -721,7 +735,8 @@
                     android:weightSum="3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardCoronaProning">
+                    app:layout_constraintTop_toBottomOf="@id/cardCoronaProning"
+                    android:baselineAligned="false">
 
                     <LinearLayout
 
@@ -741,7 +756,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:text="Sembuh"
+                                android:text="@string/sembuh"
                                 android:textColor="@color/mainColor"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -752,7 +767,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="10dp"
                                 android:layout_marginBottom="10dp"
-                                android:text="Recovered"
                                 android:textColor="@color/mainColor"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -771,7 +785,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:text="Dirawat"
+                                android:text="@string/dirawat"
                                 android:textColor="@color/mainColor"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -782,7 +796,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="10dp"
                                 android:layout_marginBottom="10dp"
-                                android:text="Recovered"
                                 android:textColor="@color/mainColor"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -817,7 +830,7 @@
                                     android:layout_gravity="center"
                                     android:layout_marginHorizontal="10dp"
                                     android:layout_marginTop="50dp"
-                                    android:text="Penambahan"
+                                    android:text="@string/penambahan"
                                     android:textAlignment="center"
                                     android:textColor="#2D4059"
                                     android:textSize="14sp"
@@ -830,7 +843,6 @@
                                     android:layout_marginHorizontal="10dp"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"
-                                    android:text="Date"
                                     android:textAlignment="center"
                                     android:textColor="#2D4059"
                                     android:textSize="12sp"
@@ -858,7 +870,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="12dp"
                                 android:layout_marginTop="10dp"
-                                android:text="Positif"
+                                android:text="@string/positif"
                                 android:textAlignment="textEnd"
                                 android:textColor="@color/mainColor"
                                 android:textSize="14sp"
@@ -870,7 +882,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="10dp"
                                 android:layout_marginBottom="10dp"
-                                android:text="Positive"
                                 android:textAlignment="textEnd"
                                 android:textColor="@color/mainColor"
                                 android:textSize="16sp"
@@ -890,7 +901,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:text="Meninggal"
+                                android:text="@string/meninggal"
                                 android:textAlignment="textEnd"
                                 android:textColor="@color/mainColor"
                                 android:textSize="14sp"
@@ -902,7 +913,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="10dp"
                                 android:layout_marginBottom="10dp"
-                                android:text="Death"
                                 android:textAlignment="textEnd"
                                 android:textColor="@color/mainColor"
                                 android:textSize="16sp"
@@ -926,7 +936,9 @@
                     android:minHeight="60dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/indonesiaDailyCorona">
+                    app:layout_constraintTop_toBottomOf="@id/indonesiaDailyCorona"
+                    tools:targetApi="lollipop"
+                    tools:ignore="TooManyViews">
 
                     <ImageView
                         android:id="@+id/imgInfoBedKosong"
@@ -937,7 +949,8 @@
                         android:src="@drawable/iconcorona"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/tvTitleBedKosong"
@@ -946,7 +959,7 @@
                         android:layout_marginStart="13dp"
                         android:layout_marginTop="25dp"
                         android:layout_marginEnd="10dp"
-                        android:text="Data Bed Kosong Di Rumah Sakit"
+                        android:text="@string/title_bed_corona"
                         android:textColor="@color/mainColor"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -961,7 +974,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="15dp"
                         android:layout_marginBottom="8dp"
-                        android:text="Anda dapat menggunakan Data API Bed kosong utnuk mencari bed kosong di daerah Rumah sakit anda"
+                        android:text="@string/desc_bed_corona"
                         android:textColor="@color/mainColor"
                         android:textSize="12sp"
                         android:textStyle="bold"
@@ -992,10 +1005,11 @@
                         android:layout_height="70dp"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginVertical="20dp"
-                        android:src="@drawable/ic_infoprovince"
+                        android:src="@drawable/ikon_bed_non_corona"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/tvTitleBedKosongNonCorona"
@@ -1004,7 +1018,7 @@
                         android:layout_marginStart="13dp"
                         android:layout_marginTop="25dp"
                         android:layout_marginEnd="10dp"
-                        android:text="Data Bed Kosong Di Rumah Sakit Non Corona"
+                        android:text="@string/title_bed_noncorona"
                         android:textColor="@color/mainColor"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -1019,7 +1033,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="15dp"
                         android:layout_marginBottom="8dp"
-                        android:text="Anda dapat menggunakan Data API Bed kosong utnuk mencari bed kosong di daerah Rumah sakit anda"
+                        android:text="@string/desc_bed_noncorona"
                         android:textColor="@color/mainColor"
                         android:textSize="12sp"
                         android:textStyle="bold"
@@ -1038,7 +1052,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="25dp"
-                    android:text="Data Kasus Corona Global"
+                    android:text="@string/title_global"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -1052,7 +1066,7 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="20dp"
-                    android:text="Data kasus virus Corona (COVID-19) yang terjadi di seluruh dunia, yang disajikan secara Realtime"
+                    android:text="@string/desc_global"
                     android:textColor="@color/grey"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -1069,7 +1083,8 @@
                     android:weightSum="20"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvDescGlobal">
+                    app:layout_constraintTop_toBottomOf="@id/tvDescGlobal"
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -1081,7 +1096,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="NO"
+                            android:text="@string/no"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="14sp"
@@ -1098,7 +1113,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Nama Negara"
+                            android:text="@string/nama_negara"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="14sp"
@@ -1115,7 +1130,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Positif +"
+                            android:text="@string/positif"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="14sp"
@@ -1132,7 +1147,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Negatif -"
+                            android:text="@string/negatif"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="14sp"
@@ -1149,7 +1164,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Meninggal"
+                            android:text="@string/meninggal"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="13sp"

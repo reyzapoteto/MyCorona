@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/accent"
     tools:context=".Activity.Vaksinasi.JenisVaksinasi">
 
     <LinearLayout
@@ -33,12 +34,22 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
-            android:text="Jenis Vaksin"
+            android:text="@string/title_jenisvaksin"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvJenisVaksin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarCityBedKosong" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

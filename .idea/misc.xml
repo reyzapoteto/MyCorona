@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/REYZA REYZNATA/AndroidStudioProjects/CoronaApp/app/src/main/res/drawable/background_circle.xml" value="0.16936936936936936" />
+        <entry key="..\:/Users/REYZA REYZNATA/AndroidStudioProjects/CoronaApp/app/src/main/res/drawable/background_indicators.xml" value="0.16936936936936936" />
         <entry key="..\:/Users/REYZA REYZNATA/AndroidStudioProjects/CoronaApp/app/src/main/res/drawable/background_main.xml" value="0.12777777777777777" />
         <entry key="..\:/Users/REYZA REYZNATA/AndroidStudioProjects/CoronaApp/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.16936936936936936" />
         <entry key="..\:/Users/REYZA REYZNATA/AndroidStudioProjects/CoronaApp/app/src/main/res/drawable/ic_use_mask.xml" value="0.12777777777777777" />
@@ -32,6 +34,7 @@
         <entry key="..\:/Users/REYZA REYZNATA/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/hospitals_datamodel.xml" value="0.1" />
         <entry key="..\:/Users/REYZA REYZNATA/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/province_bed_kosong_datamodel.xml" value="0.1" />
         <entry key="..\:/Users/REYZA REYZNATA/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/province_datamodel.xml" value="0.1" />
+        <entry key="..\:/Users/REYZA REYZNATA/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/vaksinasi_datamodel.xml" value="0.1554054054054054" />
       </map>
     </option>
   </component>

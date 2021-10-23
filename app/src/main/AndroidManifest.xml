@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.coronaapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_logo"
+        android:icon="@mipmap/ic_kitasehat"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_logo_round"
+        android:roundIcon="@mipmap/ic_kitasehat_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CoronaApp">
+        android:theme="@style/Theme.CoronaApp"
+        tools:ignore="AllowBackup">
         <activity
             android:name=".Activity.Settings.LicenseActivity"
             android:exported="true" />

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Corona</string>
+    <string name="app_name">Kita Sehat</string>
     <string name="desc_proning">Teknik proning dilakukan dengan berbaring tengkurap. Ini adalah posisi yang diterima secara medis untuk meningkatkan saturasi oksigen. Teknik ini bermanfaat pada pasien COVID-19 dengan atau tanpa pemakaian ventilator. Jika kadar oksigen pasien turun di bawah 94 persen, pasien bisa berbaring tengkurap. Posisi ini meningkatkan ventilasi dan memungkinkan pernapasan yang nyaman. </string>
     <string name="howto_proning">Bagaimana cara melakukan teknik proning saat isolasi mandiri di rumah? Untuk tengkurap, pengidap membutuhkan lima bantal dan permukaan datar untuk berbarik. Satu batal di letakkan di bawah leher, satu atau dua bantal diletakkan di bawah dada hingga paha atas dan dua bantal di bawah tulang kering.
     </string>
@@ -46,7 +46,6 @@ Fraktur tulang belakang, tulang paha, atau panggung yang tidak stabil.
     <string name="nama_negara">Nama Negara</string>
     <string name="positif">Positif +</string>
     <string name="negatif">Negatif -</string>
-    <string name="meninggal">Meninggal</string>
     <string name="bed_tersedia">Bed Tersedia :</string>
     <string name="bed_kosong">Bed Kosong :</string>
     <string name="antrian">Antrian :</string>
@@ -76,4 +75,38 @@ Fraktur tulang belakang, tulang paha, atau panggung yang tidak stabil.
     <string name="penyebaran_corona_di_provinsi">Penyebaran Corona di Provinsi</string>
     <string name="share_apps">Share Apps</string>
     <string name="lisensi_dan_dokumentasi">Lisensi dan Dokumentasi</string>
+    <string name="meninggal">Meninggal</string>
+    <string name="desc_global">Data kasus virus Corona (COVID-19) yang terjadi di seluruh dunia, yang disajikan secara Realtime</string>
+    <string name="title_global">Data Kasus Corona Global</string>
+    <string name="desc_bed_noncorona">Anda dapat menggunakan Data API Bed kosong utnuk mencari bed kosong di daerah Rumah sakit anda</string>
+    <string name="title_bed_noncorona">Data Bed Kosong Di Rumah Sakit Non Corona</string>
+    <string name="lisensi">Lisensi</string>
+    <string name="desc_telp_darurat">Apabila dalam keadaan darurat hubungi (112) bebas pulsa</string>
+    <string name="title_covid">Penyakit Corona (Covid-19)</string>
+    <string name="desc_covid">Semua hal tentang Perkembangan dan Statistik dari Penyakit pandemi covid-19 yang terjadi di negara indonesia beserta indicatornya</string>
+    <string name="terinfeksi">Terinfeksi</string>
+    <string name="sembuh">Sembuh</string>
+    <string name="dirawat">Dirawat</string>
+    <string name="pencegahan_virus_covid_19">Pencegahan Virus COVID-19</string>
+    <string name="desc_ikon1">Selalu Mencuci Tangan</string>
+    <string name="desc_ikon2">Terapkan \nJaga Jarak</string>
+    <string name="desc_ikon3">Selalu Menggunakan 2 Masker</string>
+    <string name="title_rs">Penyebaran Corona di Setiap Provinsi</string>
+    <string name="desc_rs">Cari Penyebaran Virus Corona COVID-19 di daerah anda secara realtime</string>
+    <string name="title_rstujukan">Rs Rujukan</string>
+    <string name="desc_rsprovinsi">Data-Data Rumah sakit rujukan penyakit COVID -19 di seluruh indonesia</string>
+    <string name="data_vaksinasi">Data Vaksinasi</string>
+    <string name="data_laju_perkembangan_vaksinasi_yang_ada_di_indonesia">Data laju perkembangan Vaksinasi yang ada di Indonesia</string>
+    <string name="title_proning">Teknik Proning untuk Pernapasan</string>
+    <string name="desc_proning_card">Cara yang Manjur dilakukan saat batas kadar udara maupun oksigen kurang dari 94%</string>
+    <string name="penambahan">Penambahan</string>
+    <string name="title_bed_corona">Data Bed Kosong Di Rumah Sakit</string>
+    <string name="desc_bed_corona">Anda dapat menggunakan Data API Bed kosong utnuk mencari bed kosong di daerah Rumah sakit anda</string>
+    <string name="title_jenisvaksin">Jenis Vaksin</string>
+    <string name="platfrom_vaksin">Platfrom Vaksin :</string>
+    <string name="jumlah_dosis_vaksin">Jumlah Dosis Vaksin :</string>
+    <string name="jeda_pemberian">Jeda Pemberian :</string>
+    <string name="efektivitas">Efektivitas :</string>
+    <string name="efek_samping">Efek Samping :</string>
+    <string name="jenis_vaksin">Jenis Vaksin</string>
 </resources>

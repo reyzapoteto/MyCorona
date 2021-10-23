@@ -25,14 +25,15 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
             android:background="@color/mainColor"
-            android:src="@drawable/ic_baseline_back_24" />
+            android:src="@drawable/ic_baseline_back_24"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
-            android:text="Lisensi"
+            android:text="@string/lisensi"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
