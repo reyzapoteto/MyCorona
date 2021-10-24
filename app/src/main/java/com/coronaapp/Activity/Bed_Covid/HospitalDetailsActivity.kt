@@ -50,8 +50,8 @@ class HospitalDetailsActivity : AppCompatActivity() {
                 call: Call<Hospital_Data_Maps>,
                 response: Response<Hospital_Data_Maps>
             ) {
-                val response = response.body()?.data
-                val gmaps = response?.gmaps
+                val responseResult = response.body()?.data
+                val gmaps = responseResult?.gmaps
 
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(gmaps))
                 startActivity(intent)

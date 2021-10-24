@@ -76,10 +76,10 @@
                     app:layout_constraintTop_toBottomOf="@id/toolbarHospitals" />
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/illustrasi_proning"
+                    android:src="@drawable/proning"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -122,7 +122,7 @@
                     android:padding="6dp"
                     android:text="@string/proning_suggestion"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/grey"
                     android:textSize="14sp"
                     android:textStyle="normal" />
 
@@ -133,7 +133,7 @@
                     android:padding="6dp"
                     android:text="@string/prevention_proning"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/grey"
                     android:textSize="14sp"
                     android:textStyle="normal" />
 

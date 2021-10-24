@@ -1,11 +1,17 @@
 package com.coronaapp.Activity
 
+import android.app.AlertDialog
+import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.coronaapp.Activity.Bed_Covid.ProvinceActivity
 import com.coronaapp.Activity.Bed_Non_Covid.Province_non_covid_activity
@@ -22,6 +28,11 @@ import com.coronaapp.model.globalResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.content.DialogInterface
+import android.provider.SyncStateContract
+import android.service.controls.ControlsProviderService.TAG
+import androidx.constraintlayout.widget.StateSet.TAG
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -48,6 +60,26 @@ class MainActivity : AppCompatActivity() {
         showIndonesia()
         showGlobal()
         showIndonesiaDaily()
+
+        if (isOnline()) {
+            // user already connect to internet
+        }else{
+            try {
+                AlertDialog
+                    .Builder(this@MainActivity)
+                    .setTitle("Hah, kok Mati ?")
+                    .setMessage("Sepertinya anda belum terkoneksi dengan internet , silahkan coba lagi")
+                    .setCancelable(false)
+                    .setIcon(R.drawable.ic_baseline_warning_24)
+                    .setNeutralButton("Oke"
+                    ) { _, _ -> finish() }
+                    .show()
+            } catch (e: Exception) {
+
+                Log.d("user", "Show Dialog: " + e.message)
+
+            }
+        }
 
         binding.cardCoronaBedKosong.setOnClickListener {
             Intent(this, ProvinceActivity::class.java).also {
@@ -102,6 +134,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
+    private fun isOnline(): Boolean {
+        val conManager =
+            applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = conManager.activeNetworkInfo
+        if (netInfo == null || !netInfo.isConnected || !netInfo.isAvailable) {
+            return false
+        }
+        return true
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString(STATE_RESULT_INFECTED, binding.tvDescInfected.text.toString())
@@ -128,7 +171,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<globalResponse>>, t: Throwable) {
-                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
                 Log.i("ErrorGlobal", t.message.toString())
                 binding.progressMain.visibility = View.INVISIBLE
                 if (t.message == "timeout") {
@@ -159,7 +201,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<UpdateCorona>, t: Throwable) {
-                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+                Log.d("error", t.message.toString())
                 binding.progressMain.visibility = View.INVISIBLE
             }
 
@@ -198,7 +240,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<IndonesiaResponse>>, t: Throwable) {
-                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+                Log.d("error", t.message.toString())
                 binding.progressMain.visibility = View.INVISIBLE
                 showIndonesia()
 

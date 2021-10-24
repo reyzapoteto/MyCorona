@@ -66,6 +66,7 @@ class HospitalActivity : AppCompatActivity() {
                 binding.progHospital.visibility = View.INVISIBLE
             }
 
-        })
+        }
+        )
     }
 }
