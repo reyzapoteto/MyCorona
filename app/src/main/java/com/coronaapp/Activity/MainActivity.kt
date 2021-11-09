@@ -1,7 +1,6 @@
 package com.coronaapp.Activity
 
 import android.app.AlertDialog
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -10,11 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.coronaapp.Activity.Bed_Covid.ProvinceActivity
 import com.coronaapp.Activity.Bed_Non_Covid.Province_non_covid_activity
+import com.coronaapp.Activity.News_Hoax.NewsCovidActivity
+import com.coronaapp.Activity.News_Hoax.NewsHoaxActivity
 import com.coronaapp.Activity.Settings.SettingsActivity
 import com.coronaapp.Activity.Vaksinasi.VaccineActivity
 import com.coronaapp.R
@@ -28,22 +28,16 @@ import com.coronaapp.model.globalResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.content.DialogInterface
-import android.provider.SyncStateContract
-import android.service.controls.ControlsProviderService.TAG
-import androidx.constraintlayout.widget.StateSet.TAG
 import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
 
     companion object {
-
         private const val STATE_RESULT_INFECTED = "state_result"
         private const val STATE_RESULT_DEATH = "state_result_death"
         private const val STATE_RESULT_RECOVERED = "state_result_recovered"
         private const val STATE_RESULT_TREATED = "state_result_treated"
-
     }
 
     private var valueIndonesia: Boolean = false
@@ -63,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
         if (isOnline()) {
             // user already connect to internet
-        }else{
+        } else {
             try {
                 AlertDialog
                     .Builder(this@MainActivity)
@@ -71,8 +65,15 @@ class MainActivity : AppCompatActivity() {
                     .setMessage("Sepertinya anda belum terkoneksi dengan internet , silahkan coba lagi")
                     .setCancelable(false)
                     .setIcon(R.drawable.ic_baseline_warning_24)
-                    .setNeutralButton("Oke"
-                    ) { _, _ -> finish() }
+                    .setNeutralButton(
+                        "Oke"
+                    ) { f, _ ->
+                        if (isOnline()) {
+                            f.dismiss()
+                        } else {
+                            finish()
+                        }
+                    }
                     .show()
             } catch (e: Exception) {
 
@@ -83,6 +84,18 @@ class MainActivity : AppCompatActivity() {
 
         binding.cardCoronaBedKosong.setOnClickListener {
             Intent(this, ProvinceActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        binding.cardHoax.setOnClickListener {
+            Intent(this, NewsHoaxActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        binding.cardBeritaCovid.setOnClickListener {
+            Intent(this, NewsCovidActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -156,7 +169,7 @@ class MainActivity : AppCompatActivity() {
     private fun showGlobal() {
 
         binding.rvGlobal.setHasFixedSize(true)
-        binding.progressMain.visibility = View.VISIBLE
+        binding.progMain.visibility = View.VISIBLE
 
         RetrofitClient.instance.getGlobal().enqueue(object : Callback<ArrayList<globalResponse>> {
             override fun onResponse(
@@ -167,12 +180,12 @@ class MainActivity : AppCompatActivity() {
                 val globalAdapter = list?.let { GlobalAdapter(it) }
                 binding.rvGlobal.adapter = globalAdapter
                 valueGlobal = true
-                binding.progressMain.visibility = View.INVISIBLE
+                binding.progMain.visibility = View.INVISIBLE
             }
 
             override fun onFailure(call: Call<ArrayList<globalResponse>>, t: Throwable) {
                 Log.i("ErrorGlobal", t.message.toString())
-                binding.progressMain.visibility = View.INVISIBLE
+                binding.progMain.visibility = View.INVISIBLE
                 if (t.message == "timeout") {
                     showGlobal()
                 }
@@ -184,7 +197,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showIndonesiaDaily() {
-        binding.progressMain.visibility = View.VISIBLE
+        binding.progMain.visibility = View.VISIBLE
 
         RetrofitClient_Day.instance.getDailyAdd().enqueue(object : Callback<UpdateCorona> {
             override fun onResponse(call: Call<UpdateCorona>, response: Response<UpdateCorona>) {
@@ -196,13 +209,13 @@ class MainActivity : AppCompatActivity() {
                 binding.tvCasesTreatDaily.text = responsenya?.TreatCases.toString()
                 binding.tvDateCaseDaily.text = responsenya?.tanggal.toString()
                 valueDaily = true
-                binding.progressMain.visibility = View.INVISIBLE
+                binding.progMain.visibility = View.INVISIBLE
 
             }
 
             override fun onFailure(call: Call<UpdateCorona>, t: Throwable) {
                 Log.d("error", t.message.toString())
-                binding.progressMain.visibility = View.INVISIBLE
+                binding.progMain.visibility = View.INVISIBLE
             }
 
         })
@@ -210,7 +223,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showIndonesia() {
-        binding.progressMain.visibility = View.VISIBLE
+        binding.progMain.visibility = View.VISIBLE
 
         RetrofitClient.instance.getIndonesia().enqueue(object :
             Callback<ArrayList<IndonesiaResponse>> {
@@ -233,15 +246,15 @@ class MainActivity : AppCompatActivity() {
                 binding.tvDescHospitallize.text = caseHospitalize
                 binding.tvDescRecovered.text = caseNegatif
                 binding.tvCountryName.text = caseCountry
-                binding.progressMain.visibility = View.INVISIBLE
+                binding.progMain.visibility = View.INVISIBLE
                 valueIndonesia = true
-                binding.progressMain.visibility = View.INVISIBLE
+                binding.progMain.visibility = View.INVISIBLE
 
             }
 
             override fun onFailure(call: Call<ArrayList<IndonesiaResponse>>, t: Throwable) {
                 Log.d("error", t.message.toString())
-                binding.progressMain.visibility = View.INVISIBLE
+                binding.progMain.visibility = View.INVISIBLE
                 showIndonesia()
 
             }

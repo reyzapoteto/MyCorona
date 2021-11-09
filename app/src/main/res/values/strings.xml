@@ -597,4 +597,70 @@ limitation the rights to use, copy, modify, merge, publish, distribute,
 sublicense, and/or sell copies of the Software, and to permit persons who
 receive copies from any such party to do so, with the only requirement being
 that this copyright notice remain intact.</string>
+    <string name="nodata">Sepertinya tidak ada RS yang tersedia</string>
+    <string name="title_hoax_news">Berita Hoax (Covid-19)</string>
+    <string name="title_hoax">Stop Berita Hoax, Cegah dari Kamuu</string>
+    <string name="desc_hoax">cegah isu berita hoax tentang covid-19 yang belum jelas terverfikasi kebenarannya,ayo cegah dari kamu sebelum menuju oranglain</string>
+    <string name="title_news">Detail Berita</string>
+    <string name="title_berita">Berita Covid</string>
+    <string name="title_news_covid">Temukan berita terkini seputar panyaki pandemi COVID-19</string>
+    <string name="desc_news_covid">berita terkini tentang penyakit covid 19 yang terjadi di seluruh indonesia mulai dari awal hingga akhir</string>
+    <string name="license_drawkit">
+        DRAWKIT Platform Terms and Conditions
+
+This Agreement describes the terms and conditions associated with your use of the DRAWKIT platform operated by DesignStripe Software Inc. (“DesignStripe”). You (“you”) are granted a non-exclusive, non-transferable, royalty-free, worldwide license to download, copy, modify, and use icons and illustrations you download through the DRAWKIT platform (the “Illustrations”), for your own commercial and non-commercial purposes, subject to the terms of this Agreement and to payment of the license fee if applicable.
+
+The terms and conditions described herein at the time you access the DRAWKIT platform apply to downloads made during your session. These terms are subject to change at any time. Please refer again to the applicable terms and conditions whenever you access the DRAWKIT platform in order to determine the rights that are granted to you with respect to Illustrations downloaded during your session.
+
+‍
+
+What is allowed?
+
+✓ All Illustrations on DrawKit are available for your own commercial and non-commercial use and within your print and digital products, except in the cases mentioned in the "What is not allowed" section below.
+
+✓ Attribution is not required. Giving credit to DesignStripe and/or DrawKit is not necessary but is always appreciated!
+
+‍
+
+What is not allowed?
+
+✕ You may not sell, distribute, lease, license, sub-license or offer Illustration files to any third party.
+
+✕ You may not redistribute Illustrations on a stand-alone basis or as a compilation, whether for commercial or non-commercial purposes.
+
+✕ You may not include Illustrations on stock image websites, in design templates, or in design template creators or applications.
+
+✕ You may not sell merchandise that includes copies of Illustrations, for example on posters, prints, mugs, caps, or t-shirts.
+
+✕ You may not include Illustrations or elements of Illustrations as part of a logo, trademark, design mark, trade name, business name, or service mark.
+
+Outside of the allowed uses, all rights in and to the Illustrations, including, without limitation, all copyright and other intellectual property rights relating to the Illustrations, are retained by DesignStripe.
+
+‍
+
+Governing Law
+
+This agreement will be construed and interpreted in accordance with and pursuant to the laws of the Province of Quebec and the laws of Canada applicable therein. Any disputes arising out of this Agreement shall be exclusively brought before the courts of competent jurisdiction in the judicial district of Montreal, Quebec, Canada.
+
+‍
+
+Limitation of Liability
+
+THE BELOW CLAUSES ARE NOT APPLICABLE TO QUEBEC CONSUMERS.
+
+To the full extent permitted by applicable laws, DesignStripe disclaims all conditions, warranties, and representations (express, implied, and statutory) with respect to the Illustrations, including without limitation all express, implied, and statutory conditions, warranties and representations of any kind, such as title, merchantability, fitness, non-infringement or suitability for any purpose.
+
+In no event will DesignStripe be liable for any loss of profits, loss of revenue or any indirect, incidental, consequential, special, punitive damages arising out of or relating to this agreement, or the Illustrations, even if DesignStripe has been advised of the possibility of such damages to the full extent allowed by applicable laws.
+
+However, for any permitted damages, in no event will the aggregate liability of DesignStripe arising out of or in connection with this agreement or the Illustrations exceed $100.00, to the full extent permitted by applicable laws.
+
+These limitations and exclusions regarding damages apply even if any remedy fails to provide adequate compensation.
+
+‍
+
+Language
+
+The parties declare that they have expressly requested that this agreement be drafted in the English language. Les parties déclarent avoir expressément exigé que la présente entente soit rédigée en anglais.
+    </string>
+
 </resources>

@@ -50,11 +50,8 @@ class HospitalActivity : AppCompatActivity() {
                     HospitalsKosongAdapter(it, this@HospitalActivity, HospitalDetailsActivity())
                 }
                 if (response.body()?.hospitals!!.size == 0) {
-                    Toast.makeText(
-                        this@HospitalActivity,
-                        "Tidak ada RS tersedia",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    binding.imgNoData.visibility = View.VISIBLE
+                    binding.tvNodata.visibility = View.VISIBLE
                 }
                 binding.progHospital.visibility = View.INVISIBLE
                 binding.rvHospitalsBedKosong.adapter = hospitalAdapter

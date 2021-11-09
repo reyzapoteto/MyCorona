@@ -1,9 +1,13 @@
 package com.coronaapp.Activity.Bed_Covid
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.coronaapp.R
 import com.coronaapp.adapter.BedKosong.CityBedKosongAdapter
@@ -31,6 +35,17 @@ class CityActivity : AppCompatActivity() {
         }
         binding.progCity.visibility = View.VISIBLE
         showCityBedKosong()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    private fun isOnline(): Boolean {
+        val conManager =
+            applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = conManager.activeNetworkInfo
+        if (netInfo == null || !netInfo.isConnected || !netInfo.isAvailable) {
+            return false
+        }
+        return true
     }
 
     private fun showCityBedKosong() {

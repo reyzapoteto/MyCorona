@@ -52,11 +52,8 @@ class Hospital_non_Covid_Activity : AppCompatActivity() {
                     )
                 }
                 if (response.body()?.hospitals!!.size == 0) {
-                    Toast.makeText(
-                        this@Hospital_non_Covid_Activity,
-                        "Tidak ada RS tersedia",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    binding.imgNoData.visibility = View.VISIBLE
+                    binding.tvNodata.visibility = View.VISIBLE
                 }
                 binding.progHospital.visibility = View.INVISIBLE
                 binding.rvHospitalsBedKosongNonCovid.adapter = hospitalAdapter

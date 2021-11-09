@@ -45,16 +45,13 @@
                 </LinearLayout>
 
                 <ProgressBar
-                    android:id="@+id/progressMain"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    android:indeterminateTint="@color/mainColor"
-                    app:layout_constraintTop_toBottomOf="@id/callCenter"
+                    android:id="@+id/progMain"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:visibility="invisible"
+                    android:layout_margin="12dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:indeterminateOnly="true"
+                    app:layout_constraintTop_toBottomOf="@id/callCenter"
                     tools:targetApi="lollipop" />
 
                 <ImageButton
@@ -1047,6 +1044,140 @@
 
 
                 <TextView
+                    android:id="@+id/tvTitleBerita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/title_berita"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardNonCoronaBedKosong" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardHoax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/background_indicators"
+                    android:backgroundTint="#B8DFD8"
+                    android:minHeight="60dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleBerita">
+
+                    <ImageView
+                        android:id="@+id/imghoax"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ikon_bed_non_corona"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvTitleHoax"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/title_hoax"
+                        android:textColor="@color/mainColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imghoax"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/desc_hoax"
+                        android:textColor="@color/mainColor"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imghoax"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleHoax" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardBeritaCovid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/background_indicators"
+                    android:backgroundTint="#B8DFD8"
+                    android:minHeight="60dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardHoax">
+
+                    <ImageView
+                        android:id="@+id/imgBerita"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ikon_bed_non_corona"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvTitleCardberita"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/title_news_covid"
+                        android:textColor="@color/mainColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imgBerita"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/desc_news_covid"
+                        android:textColor="@color/mainColor"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imgBerita"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleCardberita" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
                     android:id="@+id/tvTitleGlobal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1057,7 +1188,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardNonCoronaBedKosong" />
+                    app:layout_constraintTop_toBottomOf="@id/cardBeritaCovid" />
 
                 <TextView
                     android:id="@+id/tvDescGlobal"

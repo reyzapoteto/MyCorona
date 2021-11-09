@@ -42,15 +42,15 @@ class HospitalsActivity : AppCompatActivity() {
                 response: Response<ArrayList<RumahSakitResponse>>
             ) {
                 val list = response.body()
-                val Adapter = list?.let { Hospitals_Adapter(it) }
-                binding.rvHospitals.adapter = Adapter
+                val adapter = list?.let { Hospitals_Adapter(it) }
+                binding.rvHospitals.adapter = adapter
                 binding.progHospital.visibility = View.INVISIBLE
 
             }
 
             override fun onFailure(call: Call<ArrayList<RumahSakitResponse>>, t: Throwable) {
-                Toast.makeText(this@HospitalsActivity,t.message,Toast.LENGTH_SHORT).show()
-                Log.i("ErrorHospital",t.message.toString())
+                            Toast.makeText(this@HospitalsActivity,t.message,Toast.LENGTH_SHORT).show()
+                            Log.i("ErrorHospital",t.message.toString())
                 binding.progHospital.visibility = View.INVISIBLE
             }
 
