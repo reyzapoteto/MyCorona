@@ -25,8 +25,10 @@ class NewsAdapter(
         val name: TextView = itemView.findViewById(R.id.tvTitleHoax)
         val image: ImageView = itemView.findViewById(R.id.imgNewsHoax)
 
+
         fun bind(hoax: hoaxmodel) {
             name.text = hoax.titleHoax
+            image.setImageResource(R.drawable.ilustrasi2)
 
             background.setOnClickListener {
                 val intent = Intent(activity, NewsActivity::class.java)
