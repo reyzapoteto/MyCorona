@@ -80,107 +80,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvLocationHospital" />
 
-            <LinearLayout
-                android:id="@+id/bedCases"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:padding="5dp"
-                android:weightSum="2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTitleUpdatedData">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/mainColor"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvFreeBed"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:drawablePadding="8dp"
-                        android:padding="4dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/green"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        app:drawableStartCompat="@drawable/ic_baseline_king_bed_24"
-                        app:drawableTint="@color/green"
-                        app:layout_constraintBottom_toTopOf="@id/tvTitleFreeBed"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvTitleFreeBed"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="20dp"
-                        android:padding="2dp"
-                        android:text="@string/kasur_tersedia"
-                        android:textAlignment="center"
-                        android:textColor="@color/grey"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvFreeBed" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/mainColor"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvQueue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:drawablePadding="8dp"
-                        android:padding="4dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/red"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        app:drawableStartCompat="@drawable/ic_baseline_queue_antri_24"
-                        app:drawableTint="@color/red"
-                        app:layout_constraintBottom_toTopOf="@id/tvTitleQueue"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvTitleQueue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="20dp"
-                        android:padding="2dp"
-                        android:text="@string/jumlah_antrian"
-                        android:textAlignment="center"
-                        android:textColor="@color/grey"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvQueue" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/tvPhoneHospital"
@@ -197,7 +96,7 @@
                 app:drawableStartCompat="@drawable/ic_baseline_local_phone_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bedCases" />
+                app:layout_constraintTop_toBottomOf="@id/tvTitleUpdatedData" />
 
             <TextView
                 android:id="@+id/tvDataUpload"

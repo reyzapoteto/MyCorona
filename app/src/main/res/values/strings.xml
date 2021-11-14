@@ -664,5 +664,6 @@ The parties declare that they have expressly requested that this agreement be dr
     </string>
     <string name="title_berita_covid">Berita Tentang COVID-19</string>
     <string name="license_freepik">All Image is Designed by Freepik</string>
+    <string name="no_room">Sepertinya tidak ada kamar tersedia</string>
 
 </resources>

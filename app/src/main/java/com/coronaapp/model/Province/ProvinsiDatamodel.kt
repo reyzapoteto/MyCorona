@@ -4,19 +4,19 @@ import com.google.gson.annotations.SerializedName
 
 data class ProvinsiDatamodel(
 
-    @SerializedName("Kode_Provi") // untuk menyamakan aturan penulisan pada kotlin
+    @SerializedName("KodeProvi") // untuk menyamakan aturan penulisan pada kotlin
     val code: Int,
 
-    @SerializedName("Provinsi")
+    @SerializedName("provinsi")
     val province: String,
 
-    @SerializedName("Kasus_Posi")
+    @SerializedName("kasusPosi")
     val casePositive: Int,
 
-    @SerializedName("Kasus_Semb")
+    @SerializedName("kasusSemb")
     val caseRecovered: Int,
 
-    @SerializedName("Kasus_Meni")
+    @SerializedName("kasusMeni")
     val caseDeath: Int
 
 )

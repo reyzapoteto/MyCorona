@@ -19,9 +19,6 @@ class GlobalAdapter(private val listGlobal:ArrayList<globalResponse>):RecyclerVi
         private val tvCasePositive:TextView = itemview.findViewById(R.id.tvGlobalCasePositive)
         private val tvCaseNegative:TextView = itemview.findViewById(R.id.tvGlobalCaseNegative)
         private val tvCaseDeath:TextView = itemview.findViewById(R.id.tvGlobalCaseDeath)
-        private val numberFormat = NumberFormat.getCurrencyInstance()
-
-
         fun bind(global: globalResponse) {
             tvNumberCountry.text = global.attributes.objectID.toString()
             tvNameCountry.text = global.attributes.countryName

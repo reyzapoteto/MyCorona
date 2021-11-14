@@ -48,7 +48,9 @@
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/activity_hospital.xml" value="0.1796875" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/activity_hospital_details.xml" value="0.1796875" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/activity_hospital_non_covid.xml" value="0.1796875" />
+        <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/activity_hospital_non_vocid_details.xml" value="0.15081521739130435" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/activity_hospitals.xml" value="0.1796875" />
+        <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/activity_jenis_vaksinasi.xml" value="0.15081521739130435" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/activity_license.xml" value="0.13016608729239088" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/activity_news.xml" value="0.17552083333333332" />
@@ -62,10 +64,11 @@
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/city_bed_kosong_datamodel.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/global_datamodel.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/hoax_datamodel.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/hospitals_bed_kosong_datamodel.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/hospitals_bed_kosong_datamodel.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/hospitals_datamodel.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/province_bed_kosong_datamodel.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/province_datamodel.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/REYZA REYZNATA/StudioProjects/MyCorona/app/src/main/res/layout/vaksinasi_datamodel.xml" value="0.1585144927536232" />
       </map>
     </option>
   </component>

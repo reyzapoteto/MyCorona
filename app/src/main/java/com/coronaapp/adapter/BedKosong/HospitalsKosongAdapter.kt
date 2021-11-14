@@ -27,8 +27,6 @@ class HospitalsKosongAdapter(
         val backgroundHospitals: CardView = itemView.findViewById(R.id.backgroundHospitals)
         val tvHospitals: TextView = itemView.findViewById(R.id.tvHospitalsName)
         val tvLocation: TextView = itemView.findViewById(R.id.tvLocationHospital)
-        val tvFreeBed: TextView = itemView.findViewById(R.id.tvFreeBed)
-        val tvQueue: TextView = itemView.findViewById(R.id.tvQueue)
         val tvPhone: TextView = itemView.findViewById(R.id.tvPhoneHospital)
         val tvUpdate: TextView = itemView.findViewById(R.id.tvDataUpload)
     }
@@ -42,9 +40,7 @@ class HospitalsKosongAdapter(
     override fun onBindViewHolder(holder: HospitalViewHolder, position: Int) {
         holder.tvHospitals.text = listHospitals.hospitals[position].name
         holder.tvLocation.text = listHospitals.hospitals[position].address
-        holder.tvFreeBed.text = listHospitals.hospitals[position].avaliable.toString()
         holder.tvPhone.text = listHospitals.hospitals[position].phone
-        holder.tvQueue.text = listHospitals.hospitals[position].queue.toString()
         holder.tvUpdate.text = listHospitals.hospitals[position].info
 
         holder.backgroundHospitals.setOnClickListener {

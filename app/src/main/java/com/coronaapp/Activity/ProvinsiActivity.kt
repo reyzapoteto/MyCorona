@@ -3,12 +3,14 @@ package com.coronaapp.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.coronaapp.R
 import com.coronaapp.adapter.Province.ProvinsiAdapter
 import com.coronaapp.api.Retrofit.RetrofitClient
+import com.coronaapp.api.Retrofit.Retrofit_Provinsicovid
 import com.coronaapp.databinding.ActivityProvinsiBinding
 import com.coronaapp.model.Province.ProvinsiResponse
 import retrofit2.Call
@@ -33,12 +35,13 @@ class ProvinsiActivity : AppCompatActivity() {
     private fun showProvince() {
         binding.rvProvince.setHasFixedSize(true)
         binding.progProvince.visibility = View.VISIBLE
-        RetrofitClient.instance.getProvinsi()
-            .enqueue(object : Callback<ArrayList<ProvinsiResponse>> {
+
+
+        Retrofit_Provinsicovid.instance.getProvinsi().enqueue(object : Callback<ProvinsiResponse> {
 
                 override fun onResponse(
-                    call: Call<ArrayList<ProvinsiResponse>>,
-                    response: Response<ArrayList<ProvinsiResponse>>
+                    call: Call<ProvinsiResponse>,
+                    response: Response<ProvinsiResponse>
                 ) {
                     val list = response.body()
                     val provinceAdapter = list?.let { ProvinsiAdapter(it) }
@@ -46,8 +49,9 @@ class ProvinsiActivity : AppCompatActivity() {
                     binding.progProvince.visibility = View.INVISIBLE
                 }
 
-                override fun onFailure(call: Call<ArrayList<ProvinsiResponse>>, t: Throwable) {
+                override fun onFailure(call: Call<ProvinsiResponse>, t: Throwable) {
                     Toast.makeText(this@ProvinsiActivity, t.message, Toast.LENGTH_SHORT).show()
+                    Log.i("errorProvinsi", t.message.toString())
                     binding.progProvince.visibility = View.INVISIBLE
 
                 }

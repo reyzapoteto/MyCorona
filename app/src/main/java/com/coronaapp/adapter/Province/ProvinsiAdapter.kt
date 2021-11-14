@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.coronaapp.R
 import com.coronaapp.model.Province.ProvinsiResponse
 
-class ProvinsiAdapter(private var list: ArrayList<ProvinsiResponse>) :
+class ProvinsiAdapter(private var list: ProvinsiResponse) :
     RecyclerView.Adapter<ProvinsiAdapter.provinsiViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): provinsiViewHolder {
@@ -18,11 +18,11 @@ class ProvinsiAdapter(private var list: ArrayList<ProvinsiResponse>) :
     }
 
     override fun onBindViewHolder(holder: provinsiViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list)
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        return list.data.size
     }
 
     class provinsiViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -34,10 +34,10 @@ class ProvinsiAdapter(private var list: ArrayList<ProvinsiResponse>) :
 
         fun bind(provinsi: ProvinsiResponse) {
 
-            tvPositive.text = provinsi.attributes.casePositive.toString()
-            tvDeath.text = provinsi.attributes.caseDeath.toString()
-            tvNameProvince.text = provinsi.attributes.province
-            tvRecovered.text = provinsi.attributes.caseRecovered.toString()
+            tvPositive.text = provinsi.data[position].casePositive.toString()
+            tvDeath.text = provinsi.data[position].caseDeath.toString()
+            tvNameProvince.text = provinsi.data[position].province
+            tvRecovered.text = provinsi.data[position].caseRecovered.toString()
         }
     }
 }

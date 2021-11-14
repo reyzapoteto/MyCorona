@@ -90,6 +90,7 @@ class Hospital_Non_Vocid_Details_Activity : AppCompatActivity() {
                                 it
                             )
                         }
+
                     binding.rvHospitalsDetailsBedKosong.adapter = hospitalsDetailAdapter
                     binding.progHospital.visibility = View.INVISIBLE
                 }
